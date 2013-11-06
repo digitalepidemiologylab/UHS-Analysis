@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 NOV 2013 00:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 NOV 2013 00:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -289,9 +289,10 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 No file Bodnar_www2014.bbl.
 
-Overfull \vbox (149.0pt too high) has occurred while \output is active []
+Overfull \vbox (149.48001pt too high) has occurred while \output is active []
 
- [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+[1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
@@ -299,7 +300,7 @@ Overfull \vbox (149.0pt too high) has occurred while \output is active []
 Here is how much of TeX's memory you used:
  2756 strings out of 493488
  35099 string characters out of 3141326
- 88253 words of memory out of 3000000
+ 90253 words of memory out of 3000000
  6006 multiletter control sequences out of 15000+200000
  44167 words of font info for 58 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -310,7 +311,7 @@ e/8r.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
 pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></u
 sr/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/loca
 l/texlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on Bodnar_www2014.pdf (1 page, 48306 bytes).
+Output written on Bodnar_www2014.pdf (1 page, 57892 bytes).
 PDF statistics:
  29 PDF objects out of 1000 (max. 8388607)
  20 compressed objects within 1 object stream
