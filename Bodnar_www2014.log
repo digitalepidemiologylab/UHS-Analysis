@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.11.8)  8 NOV 2013 00:47
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=latex 2013.11.8)  8 NOV 2013 00:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -288,15 +288,15 @@ LaTeX Font Info:    Try loading font information for U+lasy on input line 95.
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
 Package epstopdf Info: Source file: <figs/meanFrequencies.eps>
-(epstopdf)                    date: 2013-11-08 00:47:22
+(epstopdf)                    date: 2013-11-08 00:58:36
 (epstopdf)                    size: 4602 bytes
 (epstopdf)             Output file: <figs/meanFrequencies-eps-converted-to.pdf>
 
-(epstopdf)                    date: 2013-11-08 00:47:27
+(epstopdf)                    date: 2013-11-08 00:58:40
 (epstopdf)                    size: 10062 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meanFrequencies-eps-c
 onverted-to.pdf figs/meanFrequencies.eps>
-(epstopdf)             \includegraphics on input line 124.
+(epstopdf)             \includegraphics on input line 131.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/meanFrequencies-eps-converted-to.pdf, id=1, 505.89pt x 505.89pt>
@@ -304,23 +304,24 @@ File: figs/meanFrequencies-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/meanFrequencies-eps-converted-to.pdf>
 Package pdftex.def Info: figs/meanFrequencies-eps-converted-to.pdf used on inpu
-t line 124.
+t line 131.
 (pdftex.def)             Requested size: 252.0pt x 252.00262pt.
 
-Overfull \hbox (12.0pt too wide) in paragraph at lines 124--125
+Overfull \hbox (12.0pt too wide) in paragraph at lines 131--132
  [][] 
  []
 
-(./Bodnar_www2014.bbl) [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/up
-dmap/pdftex.map}
+[1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./figs/meanFrequencies-eps-converted-to.pdf>]
+ <./figs/meanFrequencies-eps-converted-to.pdf>] (./Bodnar_www2014.bbl) [2
+
+]
 (./Bodnar_www2014.aux) ) 
 Here is how much of TeX's memory you used:
  2774 strings out of 493489
  35421 string characters out of 3141349
- 91261 words of memory out of 3000000
+ 92261 words of memory out of 3000000
  6013 multiletter control sequences out of 15000+200000
  47315 words of font info for 64 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -333,10 +334,10 @@ b></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb>
 </usr/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/l
 ocal/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/te
 xlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on Bodnar_www2014.pdf (1 page, 89950 bytes).
+Output written on Bodnar_www2014.pdf (2 pages, 91305 bytes).
 PDF statistics:
- 46 PDF objects out of 1000 (max. 8388607)
- 32 compressed objects within 1 object stream
+ 49 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
