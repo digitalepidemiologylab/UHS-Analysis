@@ -16,3 +16,9 @@
 *.gz
 
 *.log
+
+.DS_Store
+
+code/.RData
+
+*.Rout
