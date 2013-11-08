@@ -1,5 +1,5 @@
-pdf("figures.pdf")
+#pdf("figures.pdf")
 
 source("frequencyGraph.r")
 
-dev.off()
+#dev.off()

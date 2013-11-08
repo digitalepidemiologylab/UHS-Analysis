@@ -5,6 +5,9 @@ mydb = dbConnect(MySQL(), user='root',password='root',dbname='uhs_stalker', host
 
 users = fetch(dbSendQuery(mydb, 'select * from usersOne'))
 
+setEPS();
+postscript("allFrequencies.eps")
+
 plot(NA,xlim=c(-6,6),ylim=c(0,1))
 
 total = (1:50)*0
@@ -16,14 +19,16 @@ res = fetch(dbSendQuery(mydb, paste('select count(*) as ct, month_index -',users
 
 res$ct = (res$ct - min(res$ct))/(max(res$ct) - min(res$ct))
 total[res$month_index+25] = total[res$month_index+25] + res$ct
-lines(res$month_index, res$ct)
+lines(res$month_index, res$ct,col=rgb(0,0,0))
 found[res$month_index+25] = found[res$month_index+25]+1
 }
 
-
-
+dev.off()
+postscript("meanFrequencies.eps")
 plot(-3:3,total[22:28]/found[22:28], ylab = "Mean Tweeting Rate",xlab="Months to From Illness")
 
 lines(c(-3,-.5), c(mean(total[22:24]/found[22:24]),mean(total[22:24]/found[22:24])),lty=3)
 
 lines(c(.5,3), c(mean(total[26:28]/found[26:28]),mean(total[26:28]/found[26:28])),lty=3)
+
+dev.off()
