@@ -108,12 +108,28 @@ This is an abstract
 \keywords{Twitter, Validation, Digital Epidemiology, Remote Diagnosis} % NOT required for Proceedings
 
 \section{Introduction}
+Digital epidemiology \(\to\) novel disease detection mechanisms.
+
+Validation of this idea is important, but not done.
+
+Pull med info of individuals professionally diagnosed with ILI and their twitter accts. Compare old methods. Suggest some new things.
 
 \section{Related Work}
+
+People with issues \cite{Bodnar:2013we,Butler:2013uh,Lamb:2013to} also plos paper!
+
+Keyword \cite{Culotta:2010hx,Goel:2010jf}
+
+Tweet classification \cite{Culotta:2010hx,Lamb:2013to,Salathe:2011gr}
 
 \section{Data Collection}
 \subsection{Medical Records}
 \subsection{Twitter Records}
+Screen names taken from med records, total of 119 individuals gave us twitter handle. Threw out 15 accounts because either not legit, banned, or blocked for total of 104 seed accounts.
+
+Tweets collected through twitter timeline query. API limits to most recent 3000 tweets per account. Two cases where this was an issue, both thrown out (users that consistently tweet multiple times per hour, barely any back data available. oddly twitter site does not give accurate tweet count.) Simple loop through every account. Once first pass, process by pulling any new tweets from user that has longest time since last query. 
+
+Pulled all friends / followers from accounts. Repeated tweet pull from these. Again, process oldest first.
 
 \section{Signal Detection}
 \subsection{Event Based Signals}
@@ -158,10 +174,10 @@ Preliminary idea. Cascade effects causing echoes on social network. Also conside
 
 \section{Conclusions}
 
-\begin{thebibliography}{1}
-\bibitem{Ford:1956vc}
-L. R. Ford and D. R. Fulkerson. \newblock{Maximal Flow through a Network}. \newblock{\em Canadian Journal of Mathematics}, 8(3):399-404, 1956.
-\end{thebibliography}
+%\begin{thebibliography}{1}
+%\bibitem{Ford:1956vc}
+%L. R. Ford and D. R. Fulkerson. \newblock{Maximal Flow through a Network}. \newblock{\em Canadian Journal of Mathematics}, 8(3):399-404, 1956.
+%\end{thebibliography}
 
 
 
@@ -179,7 +195,7 @@ L. R. Ford and D. R. Fulkerson. \newblock{Maximal Flow through a Network}. \newb
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
 \bibliographystyle{abbrv}
-\bibliography{sigproc}  % sigproc.bib is the name of the Bibliography in this case
+\bibliography{library}  % sigproc.bib is the name of the Bibliography in this case
 % You must have a proper ".bib" file
 %  and remember to run:
 % latex bibtex latex latex
