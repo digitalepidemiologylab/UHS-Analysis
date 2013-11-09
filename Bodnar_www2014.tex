@@ -118,6 +118,8 @@ Pull med info of individuals professionally diagnosed with ILI and their twitter
 
 People with issues \cite{Bodnar:2013we,Butler:2013uh,Lamb:2013to} also plos paper!
 
+Most work to this point considers finding messages in tweets (i.e. ``I'm sick'') or in keyword frequencies. 
+
 Keyword \cite{Culotta:2010hx,Goel:2010jf}
 
 Tweet classification \cite{Culotta:2010hx,Lamb:2013to,Salathe:2011gr}
@@ -134,13 +136,46 @@ Pulled all friends / followers from accounts. Repeated tweet pull from these. Ag
 \section{Signal Detection}
 \subsection{Event Based Signals}
 
-Most work to this point considers finding messages in tweets (i.e. ``I'm sick'') or in keyword frequencies. 
+In this section, we consider diagnosis based on classifying an individual tweet's content as either about ILI or not. We begin by dividing the tweets into two sets: tweets that were posted the same month that a user was sick, and tweets that were posted other times. We find a total of 1609 (out of Y) tweets from X users in the first category.
 
-Consider keywords, we try using an unsupervised method to find words that seperate months with and without ILI.
+First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We choose KEYWORD LIST as our set of keywords. Of the 999 keywords, we find a significantly higher amount of 999 keywords during months when the user had ILI. (See table X). Additionally, we use METHOD to automatically find keywords with a significant effect (See table Y). In both of these cases, we preprocess the data by tokenizing the text with the regex "REGEX", remove stop words\footnote{Stop words taken from HERE}, perform iterated levins stemming and ignoring case. For each keyword \(x\), we define an individual as sick on month \(m\) if their Twitter stream contains \(x\) atleast one time. We find this method to correctly classify users \% of the time. (See tables \ref{tab:tweet_keyword_expert_confusion} and \ref{tab:tweet_keyword_algorithm_classified_confusion})
 
-Now we try using hand chosen keywords, see if we can distinguish between individuals' sick and healthy months.
 
-Finally, we hand rate all tweets in sick months to see if we can find tweets announcing illness. Find \% of individuals do tweet about being sick. Also test subsample of non-sick months to see for false positives.
+Finally, we hand rate all 1609 tweets that were posted by individuals during the time of their illness for information regarding the user's health. Additionally we sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find X tweets from Y/Z (percentage) of the individuals in our study that are about them being sick. We also find x tweets from y/Z of individuals about ILI during times when they did \textit{not} have ILI. Thus we would expect a health monitoring system based off of tweet classification to operate at \% accuracy. (See table \ref{tab:tweet_classified_confusion})
+
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|} \hline
+Sick&Not Sick&\ \\ \hline
+1 & 2& Sick\\ \hline
+3 & 4  & Not Sick\\
+\hline\end{tabular}
+\caption{Confusion matrix of a classifier based on keywords from a domain expert. Rows are of true values, columns are of predicted values.}
+\label{tab:tweet_keyword_expert_confusion}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|} \hline
+Sick&Not Sick&\ \\ \hline
+1 & 2& Sick\\ \hline
+3 & 4  & Not Sick\\
+\hline\end{tabular}
+\caption{Confusion matrix of a classifier based on keywords derived from an algorithmic aproach. Rows are of true values, columns are of predicted values.}
+\label{tab:tweet_keyword_algorithm_classified_confusion}
+\end{table}
+
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|} \hline
+Sick&Not Sick&\ \\ \hline
+1 & 2& Sick\\ \hline
+3 & 4  & Not Sick\\
+\hline\end{tabular}
+\caption{Confusion matrix of a Tweet-Classification based diagnosis system. Rows are of true values, columns are of predicted values.}
+\label{tab:tweet_classified_confusion}
+\end{table}
 
 \subsection{Frequency Based Signals}
 
