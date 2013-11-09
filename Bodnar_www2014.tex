@@ -117,24 +117,42 @@ This is an abstract
 
 \section{Signal Detection}
 \subsection{Event Based Signals}
+
+Most work to this point considers finding messages in tweets (i.e. ``I'm sick'') or in keyword frequencies. 
+
+Consider keywords, we try using an unsupervised method to find words that seperate months with and without ILI.
+
+Now we try using hand chosen keywords, see if we can distinguish between individuals' sick and healthy months.
+
+Finally, we hand rate all tweets in sick months to see if we can find tweets announcing illness. Find \% of individuals do tweet about being sick. Also test subsample of non-sick months to see for false positives.
+
 \subsection{Frequency Based Signals}
 
 Look at changes in behaviour based on illness. May have signal even if no  relevant messaging.
 
 In each user, take months when they did tweet, apply normalization (val - min)/(max-min)
 
-Build distributions of months before, during, and after illness. Compare distributions.
+Build distributions of months before, during, and after illness. Compare distributions. Try paired / unpaired
+
+Fail to find sig difference between three sets \(\to\) comment on benefits of this.
+
+Try anomoly detection...
 
 
-\begin{figure}
-\centering
-\includegraphics[width=0.5\textwidth]{figs/meanFrequencies.eps}
-\caption{The frequency of tweeting behaviour of individuals in the months before, during and after an illness. Users significantly (check) decrease their rate of tweeting during the time that they had influenza. Dashed lines indicate the mean rate for the three months before / after the illness. (Todo: check significance)}
-\label{fig:mean_freq}
-\end{figure}
+%\begin{figure} %need to redo
+%\centering
+%\includegraphics[width=0.5\textwidth]{figs/meanFrequencies.eps}
+%\caption{The frequency of tweeting behaviour of individuals in the months before, during and after an illness. Users significantly (check) decrease their rate of tweeting during the time that they had influenza. Dashed lines indicate the mean rate for the three months before / after the illness. (Todo: check significance)}
+%\label{fig:mean_freq}
+%\end{figure}
+
+
+
 
 
 \subsection{Network Based Signals}
+
+Preliminary idea. Cascade effects causing echoes on social network. Also consider friends becoming ill around same time. Check @ tag
 
 \section{Analysis}
 
