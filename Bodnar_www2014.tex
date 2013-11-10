@@ -141,7 +141,7 @@ In this section, we consider diagnosis based on classifying an individual tweet'
 First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We choose KEYWORD LIST as our set of keywords. Of the 999 keywords, we find a significantly higher amount of 999 keywords during months when the user had ILI. (See table X). Additionally, we use METHOD to automatically find keywords with a significant effect (See table Y). In both of these cases, we preprocess the data by tokenizing the text with the regex "REGEX", remove stop words\footnote{Stop words taken from HERE}, perform iterated levins stemming and ignoring case. For each keyword \(x\), we define an individual as sick on month \(m\) if their Twitter stream contains \(x\) atleast one time. We find this method to correctly classify users \% of the time. (See tables \ref{tab:tweet_keyword_expert_confusion} and \ref{tab:tweet_keyword_algorithm_classified_confusion})
 
 
-Finally, we hand rate all 1609 tweets that were posted by individuals during the time of their illness for information regarding the user's health. Additionally we sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find X tweets from Y/Z (percentage) of the individuals in our study that are about them being sick. We also find x tweets from y/Z of individuals about ILI during times when they did \textit{not} have ILI. Thus we would expect a health monitoring system based off of tweet classification to operate at \% accuracy. (See table \ref{tab:tweet_classified_confusion})
+Finally, we hand rate all 1609 tweets that were posted by individuals during the time of their illness for information regarding the user's health. Additionally we sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find 58 tweets from 17 (\(17/119 = 14.29\%\)) of the individuals in our study that are about them being sick. We also find x tweets from y/Z of individuals about ILI during times when they did \textit{not} have ILI. Thus we would expect a health monitoring system based off of tweet classification to operate at \% accuracy. (See table \ref{tab:tweet_classified_confusion})
 
 
 \begin{table}
@@ -170,7 +170,7 @@ Sick&Not Sick&\ \\ \hline
 \centering
 \begin{tabular}{|c|c|c|} \hline
 Sick&Not Sick&\ \\ \hline
-1 & 2& Sick\\ \hline
+17 & 102 & Sick\\ \hline
 3 & 4  & Not Sick\\
 \hline\end{tabular}
 \caption{Confusion matrix of a Tweet-Classification based diagnosis system. Rows are of true values, columns are of predicted values.}
