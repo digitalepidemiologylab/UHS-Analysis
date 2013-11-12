@@ -127,22 +127,32 @@ Tweet classification \cite{Culotta:2010hx,Lamb:2013to,Salathe:2011gr}
 \section{Data Collection}
 \subsection{Medical Records}
 \subsection{Twitter Records}
-Screen names taken from med records, total of 119 individuals gave us twitter handle. Threw out 15 accounts because either not legit, banned, or blocked for total of 104 seed accounts. Additionally, do not process users that did not tweet within a month of being sick, but used as control.
+We recieved a total of 119 user accounts for Twitter from the survey; 15 of which were discarded because the screen names were either non-existant, banned, or private. For each of the remaining 104 accounts, we pulled their profile information, their friends and followers information, their most recent 3000 tweets, and their friends profiles and tweets. Some users did not tweet during the month that they were sick; we kept those accounts as part of the control group. We were limited to the most recent 3000 tweets by Twitter's timeline query, but this only effected two accounts -- both of which posted multiple times per hour and were thrown out because we could only look back a few days.
 
-Tweets collected through twitter timeline query. API limits to most recent 3000 tweets per account. Two cases where this was an issue, both thrown out (users that consistently tweet multiple times per hour, barely any back data available. oddly twitter site does not give accurate tweet count.) Simple loop through every account. Once first pass, process by pulling any new tweets from user that has longest time since last query. 
+We collected data by calling the Twitter API on the user account that we queried the longest time ago. Tweets, profile and follower information queries have seperate rate limits and were collected in parallel. The 104 seed accounts collected above were given higher priority over their friends and followers. In total, we collected 37,599 tweets from the seed accounts and XX tweets from YY accounts that they either followed or were followed by.
 
-Pulled all friends / followers from accounts. Repeated tweet pull from these. Again, process oldest first.
 
 \section{Signal Detection}
 \subsection{Event Based Signals}
 
-In this section, we consider diagnosis based on classifying an individual tweet's content as either about ILI or not. We begin by dividing the tweets into two sets: tweets that were posted the same month that a user was sick, and tweets that were posted other times. We find a total of 1609 (out of Y) tweets from X users in the first category.
+In this section, we consider diagnosis based on classifying an individual tweet's content as either about ILI or not. We begin by dividing the tweets into two sets: tweets that were posted the same month that a user was sick, and tweets that were posted other times. We find a total of 1609 tweets from 35 users in the first category.
 
-First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of the 999 keywords, we find a significantly higher amount of 999 keywords during months when the user had ILI. (See table X). Additionally, we use METHOD to automatically find keywords with a significant effect (See table Y). In both of these cases, we preprocess the data by tokenizing the text with the regex "REGEX", remove stop words\footnote{Stop words taken from HERE}, perform iterated levins stemming and ignoring case. For each keyword \(x\), we define an individual as sick on month \(m\) if their Twitter stream contains \(x\) atleast one time. We find this method to correctly classify users \% of the time. (See tables \ref{tab:tweet_keyword_expert_confusion} and \ref{tab:tweet_keyword_algorithm_classified_confusion})
+First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significantly different amount of 999 of the keywords during months when the user had ILI. (See table X). Additionally, we use METHOD to automatically find keywords with a significant effect (See table Y). In both of these cases, we preprocess the data by tokenizing the text with the regex "REGEX", remove stop words\footnote{Stop words taken from HERE}, perform iterated levins stemming and ignoring case. For each keyword \(x\), we define an individual as sick on month \(m\) if their Twitter stream contains \(x\) atleast one time. We find this method to correctly classify users \% of the time. (See tables \ref{tab:tweet_keyword_expert_confusion} and \ref{tab:tweet_keyword_algorithm_classified_confusion})
 
 
-Finally, we hand rate all 1609 tweets that were posted by individuals during the time of their illness for information regarding the user's health. Additionally we sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find 58 tweets from 17 (\(17/35 = 14.29\%\)) of the individuals in our study that are about them being sick. We also find zero tweets about ILI during times when they did \textit{not} have ILI. Thus we would expect a health monitoring system based off of tweet classification to operate at \% accuracy. (See table \ref{tab:tweet_classified_confusion})
+Finally, we hand rate all 1609 tweets, that were posted by individuals during the time of their illness,  for information regarding the user's health. Additionally we sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find 58 tweets from 17 (\(17/35 = 48.57\%\))  individuals in our study that are about the user being sick. We also find zero tweets about ILI during times when they did \textit{not} have ILI. Thus we would expect a health monitoring system based off of tweet classification to operate with at most 82.18\% accuracy. (See table \ref{tab:tweet_classified_confusion})
 
+
+%\begin{table}
+%\centering
+%\begin{tabular}{|c|c|c|} \hline
+%Word& Odds Ratio & Significance\ \\ \hline
+%1 & 2& Sick\\ \hline
+%3 & 4  & Not Sick\\
+%\hline\end{tabular}
+%\caption{Keyword effects.}
+%\label{tab:tweet_keyword_expert_results}
+%\end{table}
 
 \begin{table}
 \centering
