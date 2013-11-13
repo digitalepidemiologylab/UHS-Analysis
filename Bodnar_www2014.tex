@@ -142,17 +142,17 @@ First we go the route of AUTHOR and AUTHOR by defining a set of keywords that ar
 
 Finally, we hand rate all 1609 tweets, that were posted by individuals during the time of their illness,  for information regarding the user's health. Additionally we sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find 58 tweets from 17 (\(17/35 = 48.57\%\))  individuals in our study that are about the user being sick. We also find zero tweets about ILI during times when they did \textit{not} have ILI. Thus we would expect a health monitoring system based off of tweet classification to operate with at most 82.18\% accuracy. (See table \ref{tab:tweet_classified_confusion})
 
+%\include{tables/keyword_expert_odds.tex}
 
-%\begin{table}
-%\centering
-%\begin{tabular}{|c|c|c|} \hline
-%Word& Odds Ratio & Significance\ \\ \hline
-%1 & 2& Sick\\ \hline
-%3 & 4  & Not Sick\\
-%\hline\end{tabular}
-%\caption{Keyword effects.}
-%\label{tab:tweet_keyword_expert_results}
-%\end{table}
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|c|} \hline
+Word& Total &Odds Ratio & Significance\ \\ \hline
+\input{tables/keyword_expert_odds}
+\end{tabular}
+\caption{Keyword effects.}
+\label{tab:tweet_keyword_expert_results}
+\end{table}
 
 \begin{table}
 \centering
