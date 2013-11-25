@@ -41,3 +41,102 @@ mean(abs(sick_times))
 
 length(which(abs(sick_times)>1)) / length(sick_times)
 length(which(abs(not_sick_times)>1)) / length(not_sick_times)
+
+#calculates the optimal division (through brute force...)
+optimal_cut <- function(negative, positive, sensitivity = 1e-3)
+{
+sequence = seq(0,10,sensitivity)
+optimal = -1
+optimal_score = -99999999
+negative = abs(negative)
+positive = abs(positive)
+scores = sequence
+
+for(cut in sequence)
+{
+score = length(which(negative > cut)) + length(which(positive <= cut)) - length(which(negative <= cut)) - length(which(positive > cut))
+
+if(score > optimal_score)
+{
+optimal_score = score
+optimal = cut
+}
+scores[which(sequence == cut)] = score
+}
+#plot(sequence, scores)
+return(optimal)
+}
+
+
+make_confusion <- function(negative, positive, cut = -9999)
+{
+if(cut < 0)
+{
+cut = optimal_cut(negative, positive)
+}
+
+negative = abs(negative)
+positive = abs(positive)
+
+values = matrix(NA,2,2)
+values[1,1] = length(which(negative > cut))
+values[1,2] = length(which(negative <= cut))
+
+values[2,1] = length(which(positive > cut))
+values[2,2] = length(which(positive <= cut))
+
+
+return(values)
+}
+
+eval_confusion <- function(matrix)
+{
+return((matrix[1,1]+matrix[2,2])/sum(matrix))
+}
+
+
+leave_one_out <- function(negative, positive, sensitivity = 1e-3)
+{
+values = matrix(0,2,2)
+negative = abs(negative)
+positive = abs(positive)
+spread = c()
+for( ct in 1:length(negative))
+{
+cut = optimal_cut(negative[-ct],positive,sensitivity)
+spread = c(spread,cut)
+if(negative[ct] > cut)
+{
+values[1,1] = values[1,1]+1
+}
+else
+{
+values[1,2] = values[1,2]+1
+}
+}
+
+for( ct in 1:length(positive))
+{
+cut = optimal_cut(negative,positive[-ct],sensitivity)
+spread = c(spread,cut)
+if(positive[ct] > cut)
+{
+values[2,1] = values[2,1]+1
+}
+else
+{
+values[2,2] = values[2,2]+1
+}
+}
+d = NA
+d$confusion = values
+d$hist = spread
+return(d)
+}
+
+leave_one_out(sick_times,not_sick_times) -> result
+#leave_one_out(sick_times,not_sick_times, sensitivity = 1e-5) -> result #for final run
+
+result$confusion
+
+eval_confusion(result$confusion)
