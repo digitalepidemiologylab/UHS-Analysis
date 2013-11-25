@@ -1,0 +1,37 @@
+\begin{thebibliography}{1}
+
+\bibitem{Bodnar:2013we}
+T.~Bodnar and M.~Salath{\'e}.
+\newblock {Validating Models for Disease Detection Using Twitter}.
+\newblock {\em WWW 2013 Companion}, June 2013.
+
+\bibitem{Butler:2013uh}
+D.~Butler.
+\newblock {When Google got flu wrong}.
+\newblock {\em Nature}, 494(7436):155--156, Feb. 2013.
+
+\bibitem{Culotta:2010hx}
+A.~Culotta.
+\newblock {Towards detecting influenza epidemics by analyzing Twitter messages
+  }.
+\newblock In {\em the First Workshop}, pages 115--122, New York, New York, USA,
+  2010. ACM Press.
+
+\bibitem{Goel:2010jf}
+S.~Goel, J.~M. Hofman, S.~Lahaie, D.~M. Pennock, and D.~J. Watts.
+\newblock {Predicting consumer behavior with Web search.}
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 107(41):17486--17490, Oct. 2010.
+
+\bibitem{Lamb:2013to}
+A.~Lamb, M.~J. Paul, and M.~Dredze.
+\newblock {Separating Fact from Fear: Tracking Flu Infections on Twitter}.
+\newblock {\em cs.jhu.edu}, 2013.
+
+\bibitem{Salathe:2011gr}
+M.~Salath{\'e} and S.~Khandelwal.
+\newblock {Assessing vaccination sentiments with online social media:
+  implications for infectious disease dynamics and control.}
+\newblock {\em PLoS computational biology}, 7(10):e1002199, Oct. 2011.
+
+\end{thebibliography}
