@@ -189,16 +189,13 @@ Sick&Not Sick&\ \\ \hline
 
 \subsection{Frequency Based Signals}
 
-Look at changes in behaviour based on illness. May have signal even if no  relevant messaging.
+We perform one-dimensional anomaly detection on each user's monthly tweeting rate as follows. First, we calculate the number of tweets in each month in the study period and discard any months where the user tweets less than ten times. This avoids issues caused by the user starting or stopping to use Twitter. We then calulate the z-score of the tweeting rate of the month that the user is ill by
 
-In each user, take months when they did tweet, apply normalization (val - min)/(max-min)
+\begin{equation}
+z = \frac{|x - \bar{x}|}{\hat{s}}
+\end{equation}
 
-Build distributions of months before, during, and after illness. Compare distributions. Try paired / unpaired
-
-Fail to find sig difference between three sets \(\to\) comment on benefits of this.
-
-Try anomoly detection...
-
+Where \(\bar{x}\) and \(\hat{s}\) are the estimated mean and standard deviation of the user's tweeting rate. (cite?) We repeat this process for months when the user is not sick. We then decide that the user is sick if \(z > 1.91\) where \(1.91\) was chosen through leave one out cross validation. We find a significant difference between the z-scores for months when a user was had ILI and months when the user did not (\(p = 0.01303\), two-sample Kolmogorov-Smirnov test). We can differentiate between these classes with an accuracy of \(\approx .1234\). (See table \ref{tab:tweet_anomaly_confusion}.)
 
 %\begin{figure} %need to redo
 %\centering
@@ -208,7 +205,16 @@ Try anomoly detection...
 %\end{figure}
 
 
-
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|} \hline
+Sick&Not Sick&\ \\ \hline
+8 & 31 & Sick\\ \hline
+4 & 215  & Not Sick\\
+\hline\end{tabular}
+\caption{Confusion matrix of a Tweet-Classification based diagnosis system. Rows are of true values, columns are of predicted values.}
+\label{tab:tweet_anomaly_confusion}
+\end{table}
 
 
 \subsection{Network Based Signals}
@@ -218,6 +224,8 @@ Preliminary idea. Cascade effects causing echoes on social network. Also conside
 \section{Analysis}
 
 \section{Conclusions}
+
+Comment on ~250 mill active T users \(\to\) 75 mill active US users, possibility of detecting \~ 10\% anual ILI rate, \~ half are detectable on twitter Twitter, so 12.5 mill cases as upper estimate.
 
 %\begin{thebibliography}{1}
 %\bibitem{Ford:1956vc}
