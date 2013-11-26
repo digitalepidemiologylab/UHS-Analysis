@@ -28,10 +28,10 @@
 
 \documentclass{acm_proc_article-sp}
 
+
 \begin{document}
 
 \title{On the Ground Validation of Online Diagnosis with Twitter and Medical Records}
-
 
 %
 % You need the command \numberofauthors to handle the 'placement
@@ -195,7 +195,8 @@ We perform one-dimensional anomaly detection on each user's monthly tweeting rat
 z = \frac{|x - \bar{x}|}{\hat{s}}
 \end{equation}
 
-Where \(\bar{x}\) and \(\hat{s}\) are the estimated mean and standard deviation of the user's tweeting rate. (cite?) We repeat this process for months when the user is not sick. We then decide that the user is sick if \(z > 1.91\) where \(1.91\) was chosen through leave one out cross validation. We find a significant difference between the z-scores for months when a user was had ILI and months when the user did not (\(p = 0.01303\), two-sample Kolmogorov-Smirnov test). We can differentiate between these classes with an accuracy of \(\approx .1234\). (See table \ref{tab:tweet_anomaly_confusion}.)
+Where \(\bar{x}\) and \(\hat{s}\) are the estimated mean and standard deviation of the user's tweeting rate. (cite?) We repeat this process for months when the user is not sick. We then decide that the user is sick if \(z > 1.411\) where \(1.411\) was chosen through leave one out cross validation. We find a significant difference between the z-scores for months when a user was had ILI and months when the user did not (\(p = 0.01303\), two-sample Kolmogorov-Smirnov test). Most of the time individuals are not sick (219 / 258 = 84.88\%), resulting in a highly biased sample. Thus we optimize based on the \(F_1\) score. The optimal z-score cutoff results in \(F_1= 35.0\%\). (See table \ref{tab:tweet_anomaly_confusion}.) 
+
 
 %\begin{figure} %need to redo
 %\centering
@@ -209,10 +210,10 @@ Where \(\bar{x}\) and \(\hat{s}\) are the estimated mean and standard deviation 
 \centering
 \begin{tabular}{|c|c|c|} \hline
 Sick&Not Sick&\ \\ \hline
-8 & 31 & Sick\\ \hline
-4 & 215  & Not Sick\\
+14 & 25 & Sick\\ \hline
+27 & 192 & Not Sick\\
 \hline\end{tabular}
-\caption{Confusion matrix of a Tweet-Classification based diagnosis system. Rows are of true values, columns are of predicted values.}
+\caption{Confusion matrix of the classifier based on anomalous tweeting rates. Rows are of true values, columns are of predicted values.}
 \label{tab:tweet_anomaly_confusion}
 \end{table}
 
@@ -225,7 +226,7 @@ Preliminary idea. Cascade effects causing echoes on social network. Also conside
 
 \section{Conclusions}
 
-Comment on ~250 mill active T users \(\to\) 75 mill active US users, possibility of detecting \~ 10\% anual ILI rate, \~ half are detectable on twitter Twitter, so 12.5 mill cases as upper estimate.
+Comment on \(\sim\) 250 mill active T users \(\to\) 75 mill active US users, possibility of detecting \(\sim\) 10\% anual ILI rate, \(\sim\) half are detectable on twitter Twitter, so 12.5 mill cases as upper estimate.
 
 %\begin{thebibliography}{1}
 %\bibitem{Ford:1956vc}

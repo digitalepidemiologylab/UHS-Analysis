@@ -43,7 +43,8 @@ length(which(abs(sick_times)>1)) / length(sick_times)
 length(which(abs(not_sick_times)>1)) / length(not_sick_times)
 
 #calculates the optimal division (through brute force...)
-optimal_cut <- function(negative, positive, sensitivity = 1e-3)
+#fOne = use f1 measure instead of accuracy?
+optimal_cut <- function(negative, positive, sensitivity = 1e-3, fOne = FALSE)
 {
 sequence = seq(0,10,sensitivity)
 optimal = -1
@@ -54,7 +55,24 @@ scores = sequence
 
 for(cut in sequence)
 {
+score = -1
+if(fOne)
+{
+tp = length(which(negative > cut))
+fp = length(which(positive > cut))
+fn = length(which(negative <= cut))
+score = (2*tp)/(2*tp+fn+fp)
+
+if(is.na(score))
+{
+score = -1
+}
+
+}
+else
+{
 score = length(which(negative > cut)) + length(which(positive <= cut)) - length(which(negative <= cut)) - length(which(positive > cut))
+}
 
 if(score > optimal_score)
 {
@@ -63,7 +81,7 @@ optimal = cut
 }
 scores[which(sequence == cut)] = score
 }
-#plot(sequence, scores)
+plot(sequence, scores)
 return(optimal)
 }
 
@@ -89,13 +107,17 @@ values[2,2] = length(which(positive <= cut))
 return(values)
 }
 
-eval_confusion <- function(matrix)
+eval_confusion <- function(matrix,fOne=FALSE)
 {
+if(fOne)
+{
+return((2*matrix[1,1])/(2*matrix[1,1]+matrix[2,1]+matrix[1,2]))
+}
 return((matrix[1,1]+matrix[2,2])/sum(matrix))
 }
 
 
-leave_one_out <- function(negative, positive, sensitivity = 1e-3)
+leave_one_out <- function(negative, positive, ...)
 {
 values = matrix(0,2,2)
 negative = abs(negative)
@@ -103,7 +125,7 @@ positive = abs(positive)
 spread = c()
 for( ct in 1:length(negative))
 {
-cut = optimal_cut(negative[-ct],positive,sensitivity)
+cut = optimal_cut(negative[-ct],positive,...)
 spread = c(spread,cut)
 if(negative[ct] > cut)
 {
@@ -117,7 +139,7 @@ values[1,2] = values[1,2]+1
 
 for( ct in 1:length(positive))
 {
-cut = optimal_cut(negative,positive[-ct],sensitivity)
+cut = optimal_cut(negative,positive[-ct],...)
 spread = c(spread,cut)
 if(positive[ct] > cut)
 {
@@ -134,9 +156,32 @@ d$hist = spread
 return(d)
 }
 
-leave_one_out(sick_times,not_sick_times) -> result
+roc <- function(negative, positive, sensitivity = 1e-3, ...)
+{
+fp = c()
+tp = c()
+
+sequence = seq(0,10,sensitivity)
+
+for(cut in sequence)
+{
+make_confusion(negative, positive, cut = cut) -> m
+fp = c(fp, m[2,1])
+tp = c(tp, m[1,1])
+}
+
+fp = fp / length(positive)
+tp = tp / length(negative)
+
+plot(fp,tp, type = "l", ...)
+lines(c(0,1),c(0,1), lty=2)
+}
+
+leave_one_out(sick_times,not_sick_times,fOne=TRUE) -> result
 #leave_one_out(sick_times,not_sick_times, sensitivity = 1e-5) -> result #for final run
 
-result$confusion
 
-eval_confusion(result$confusion)
+eval_confusion(make_confusion(sick_times,not_sick_times, cut = mean(result$hist)),fOne=TRUE)
+
+make_confusion(sick_times,not_sick_times, cut = mean(result$hist))
+
