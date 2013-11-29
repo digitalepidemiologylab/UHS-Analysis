@@ -189,13 +189,13 @@ Sick&Not Sick&\ \\ \hline
 
 \subsection{Frequency Based Signals}
 
-We perform one-dimensional anomaly detection on each user's monthly tweeting rate as follows. First, we calculate the number of tweets in each month in the study period and discard any months where the user tweets less than ten times. This avoids issues caused by the user starting or stopping to use Twitter. We then calulate the z-score of the tweeting rate of the month that the user is ill by
+We perform one-dimensional anomaly detection on each user's monthly tweeting rate as follows. First, we calculate the number of tweets in each month in the study period and discard any months where the user tweets less than ten times. This avoids issues caused by the user starting or stopping to use Twitter. We then calculate the z-score of the tweeting rate of the month that the user is ill by
 
 \begin{equation}
 z = \frac{|x - \bar{x}|}{\hat{s}}
 \end{equation}
 
-Where \(\bar{x}\) and \(\hat{s}\) are the estimated mean and standard deviation of the user's tweeting rate. (cite?) We repeat this process for months when the user is not sick. We then decide that the user is sick if \(z > 1.411\) where \(1.411\) was chosen through leave one out cross validation. We find a significant difference between the z-scores for months when a user was had ILI and months when the user did not (\(p = 0.01303\), two-sample Kolmogorov-Smirnov test). Most of the time individuals are not sick (219 / 258 = 84.88\%), resulting in a highly biased sample. Thus we optimize based on the \(F_1\) score. The optimal z-score cutoff results in \(F_1= 35.0\%\). (See table \ref{tab:tweet_anomaly_confusion}.) 
+Where \(\bar{x}\) and \(\hat{s}\) are the estimated mean and standard deviation of the user's tweeting rate. \cite{Grubs:1969ab} We repeat this process for months when the user is not sick. We then decide that the user is sick if \(z > 1.411\) where \(1.411\) was chosen through leave one out cross validation. We find a significant difference between the z-scores for months when a user was had ILI and months when the user did not (\(p = 0.01303\), two-sample Kolmogorov-Smirnov test). Most of the time individuals are not sick (219 / 258 = 84.88\%), resulting in a highly biased sample. Thus we optimize based on the \(F_1\) score. The optimal z-score cutoff results in \(F_1= 35.0\%\). (See table \ref{tab:tweet_anomaly_confusion}.) 
 
 
 %\begin{figure} %need to redo
