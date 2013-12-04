@@ -28,6 +28,9 @@
 
 \documentclass{acm_proc_article-sp}
 
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \begin{document}
 
@@ -137,7 +140,21 @@ We collected data by calling the Twitter API on the user account that we queried
 
 In this section, we consider diagnosis based on classifying an individual tweet's content as either about ILI or not. We begin by dividing the tweets into two sets: tweets that were posted the same month that a user was sick, and tweets that were posted other times. We find a total of 1609 tweets from 35 users in the first category.
 
-First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significantly different amount of 999 of the keywords during months when the user had ILI. (See table X). Additionally, we use METHOD to automatically find keywords with a significant effect (See table Y). In both of these cases, we preprocess the data by tokenizing the text with the regex "REGEX", remove stop words\footnote{Stop words taken from HERE}, perform iterated levins stemming and ignoring case. For each keyword \(x\), we define an individual as sick on month \(m\) if their Twitter stream contains \(x\) at least one time. We find this method to correctly classify users \% of the time. (See tables \ref{tab:tweet_keyword_expert_confusion} and \ref{tab:tweet_keyword_algorithm_classified_confusion})
+First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significantly different amount of 999 of the keywords during months when the user had ILI. (See table X). Additionally, we use METHOD to automatically find keywords with a significant effect (See table Y). In both of these cases, we preprocess the data by tokenizing the text with the regex "REGEX", remove stop words\footnote{Stop words taken from HERE}, perform iterated levins stemming and ignoring case. For each keyword \(x\), we define an individual as sick on month \(m\) if their Twitter stream contains \(x\) at least one time. We find this method to correctly classify users \% of the time. (See tables \ref{tab:tweet_keyword_expert_confusion} and \ref{tab:tweet_keyword_algorithm_classified_confusion}) REWRITE FOR ML ALGOS
+
+\begin{figure} [h]
+\centering
+\begin{subfigure}[b]{.2\textwidth}
+\includegraphics[width=\textwidth]{figs/key_exp_roc.eps}
+\end{subfigure}
+\begin{subfigure}[b]{.2\textwidth}
+\includegraphics[width=\textwidth]{figs/key_dm_roc.eps}
+\end{subfigure}
+\caption{The ROC of classifiers that use hand chosen keywords (a) and algorithmically chosen keywords (b) to determine if an individual is ill. The top 10 (solid line), 100 (dashed line) and 1000 (double dashed line) were selected as the features. }
+\label{fig:roc_keyword}
+\end{figure}
+
+Also algorithmically choose keywords, start by processing most common 12393 (5000 plus ties) stemmed words. Rank keywords by information gain, with 10 fold cv. Then select \{10,100,1000\} most relevant keywords and to ML on them.
 
 
 Finally, we hand rate all 1609 tweets, that were posted by individuals during the time of their illness,  for information regarding the user's health. Additionally we sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find 58 tweets from 17 (\(17/35 = 48.57\%\))  individuals in our study that are about the user being sick. We also find zero tweets about ILI during times when they did \textit{not} have ILI. Thus we would expect a health monitoring system based off of tweet classification to operate with at most 82.18\% accuracy. (See table \ref{tab:tweet_classified_confusion})

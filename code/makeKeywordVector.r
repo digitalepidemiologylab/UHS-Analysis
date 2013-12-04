@@ -38,3 +38,6 @@ contains[x,y] = keywords[y] %in% stemmed
 }
 
 write.csv(data.frame(contains,sick==1), "../data/expert_keyword_vector.csv")
+
+
+write.arff(data.frame(text$c, sick==1), "../data/all_keyword_vector.arff")
