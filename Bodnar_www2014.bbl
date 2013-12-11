@@ -33,10 +33,21 @@ A.~Lamb, M.~J. Paul, and M.~Dredze.
 \newblock {Separating Fact from Fear: Tracking Flu Infections on Twitter}.
 \newblock {\em cs.jhu.edu}, 2013.
 
+\bibitem{Porter:1980dd}
+M.~F. Porter.
+\newblock {An algorithm for suffix stripping}.
+\newblock {\em Program: electronic library and information systems},
+  14(3):130--137, 1980.
+
 \bibitem{Salathe:2011gr}
 M.~Salath{\'e} and S.~Khandelwal.
 \newblock {Assessing vaccination sentiments with online social media:
   implications for infectious disease dynamics and control.}
 \newblock {\em PLoS computational biology}, 7(10):e1002199, Oct. 2011.
+
+\bibitem{Willett:2006vb}
+P.~Willett.
+\newblock {The Porter stemming algorithm: then and now}.
+\newblock {\em Program: electronic library and information systems}, 2006.
 
 \end{thebibliography}
