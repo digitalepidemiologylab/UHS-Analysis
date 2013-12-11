@@ -130,17 +130,17 @@ Tweet classification \cite{Culotta:2010hx,Lamb:2013to,Salathe:2011gr}
 \section{Data Collection}
 \subsection{Medical Records}
 \subsection{Twitter Records}
-We received a total of 119 user accounts for Twitter from the survey; 15 of which were discarded because the screen names were either non-existent, banned, or private. For each of the remaining 104 accounts, we pulled their profile information, their friends and followers information, their most recent 3000 tweets, and their friends profiles and tweets. Some users did not tweet during the month that they were sick; we kept those accounts as part of the control group. We were limited to the most recent 3000 tweets by Twitter's time line query, but this only effected two accounts -- both of which posted multiple times per hour and were thrown out because we could only look back a few days.
+We received a total of 119 user accounts for Twitter from the survey; 15 of which were discarded because the associated accounts were either non-existent, banned, or private. For each of the remaining 104 accounts, we pulled their profile information, their friends and followers information, their most recent 3000 tweets, and their friends profiles and tweets. Some users did not tweet during the month that they were sick; we kept those accounts as part of the control group. We were limited to the most recent 3000 tweets by Twitter's time line query, but this only effected two accounts -- both of which posted multiple times per hour and were thrown out because we could only look back a few days.
 
 We collected data by calling the Twitter API on the user account that we queried the longest time ago. Tweets, profile and follower information queries have separate rate limits and were collected in parallel. The 104 seed accounts collected above were given higher priority over their friends and followers. In total, we collected 37,599 tweets from the seed accounts and XX tweets from YY accounts that they either followed or were followed by.
 
 
 \section{Signal Detection}
-\subsection{Event Based Signals}
+\subsection{Text Based Signals}
 
 In this section, we consider diagnosis based on classifying an individual tweet's content as either about ILI or not. We begin by dividing the tweets into two sets: tweets that were posted the same month that a user was sick, and tweets that were posted other times. We find a total of 1609 tweets from 35 users in the first category.
 
-First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significant effect in 6 of the keywords during months when the user had ILI. (See table \ref{tab:tweet_keyword_expert_results}). Additionally, we try algorithmically selecting keywords by first finding the 12,393 most common keywords in the data set.  We then rank them based off of information gain and choose the top 10,100 or 1000 keywords from the list. In both of these cases, we preprocess the data by tokenizing the text on the characters ``.,;:'"()?!'' - as well as spaces, tabs and line breaks - remove stop words\footnote{Stop words taken from Weka's stoplist version 3.7.10.}, perform Porter stemming \cite{Porter:1980dd,Willett:2006vb}  and convert the text to lower case. We then use the occurance or absence of these keywords as features for classification. We use naive bayes, random forest, J48, logistic regression and support vector machines to classify a user as being sick in a given month or not (see figure \ref{fig:roc_keyword}).
+First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significant effect in 6 of the keywords during months when the user had ILI. (See table \ref{tab:tweet_keyword_expert_results}). Additionally, we try algorithmically selecting keywords by first finding the 12,393 most common keywords in the data set.  We then rank them based off of information gain and choose the top 10,100 or 1000 keywords from the list. In both of these cases, we preprocess the data by tokenizing the text on the characters ``.,;':"()?!'' - as well as spaces, tabs and line breaks - remove stop words\footnote{Stop words taken from Weka's stoplist version 3.7.10.}, perform Porter stemming \cite{Porter:1980dd,Willett:2006vb}  and convert the text to lower case. We then use the occurance or absence of these keywords as features for classification. We use naive bayes, random forest, J48, logistic regression and support vector machines to classify a user as being sick in a given month or not (see figure \ref{fig:roc_keyword}).
 
 \begin{figure} [h]
 \centering
@@ -150,7 +150,7 @@ First we go the route of AUTHOR and AUTHOR by defining a set of keywords that ar
 \begin{subfigure}[b]{.2\textwidth}
 \includegraphics[width=\textwidth]{figs/key_dm_roc.eps}
 \end{subfigure}
-\caption{The ROC of classifiers that use hand chosen keywords (a) and algorithmically chosen keywords (b) to determine if an individual is ill. The top 10 (solid line), 100 (dashed line) and 1000 (double dashed line) were selected as the features. (COMMENT: untill I add it to figures. Green is Naive bayes, red is j48, blue is logistic, orange is random forest and purple is SVM.)}
+\caption{The ROC of classifiers that use hand chosen keywords (a) and algorithmically chosen keywords (b) to determine if an individual is ill. The top 10 (solid line), 100 (dashed line) and 1000 (dotted line) were selected as the features. (COMMENT: untill I add it to figures. Green is Naive bayes, red is j48, blue is logistic, orange is random forest and purple is SVM.)}
 \label{fig:roc_keyword}
 \end{figure}
 
@@ -170,27 +170,6 @@ Word& Total &Odds Ratio & Significance\ \\ \hline
 \label{tab:tweet_keyword_expert_results}
 \end{table}
 
-\begin{table}
-\centering
-\begin{tabular}{|c|c|c|} \hline
-Sick&Not Sick&\ \\ \hline
-1 & 2& Sick\\ \hline
-3 & 4  & Not Sick\\
-\hline\end{tabular}
-\caption{Confusion matrix of a classifier based on keywords from a domain expert. Rows are of true values, columns are of predicted values.}
-\label{tab:tweet_keyword_expert_confusion}
-\end{table}
-
-\begin{table}
-\centering
-\begin{tabular}{|c|c|c|} \hline
-Sick&Not Sick&\ \\ \hline
-1 & 2& Sick\\ \hline
-3 & 4  & Not Sick\\
-\hline\end{tabular}
-\caption{Confusion matrix of a classifier based on keywords derived from an algorithmic aproach. Rows are of true values, columns are of predicted values.}
-\label{tab:tweet_keyword_algorithm_classified_confusion}
-\end{table}
 
 \begin{table}
 \centering
@@ -242,6 +221,7 @@ Preliminary idea. Cascade effects causing echoes on social network. Also conside
 
 Combine features based off of previous signals, get something that's -- hopefully -- more accurate.
 
+To this point, we have considered five approaches to detecting illness -- keyword detection, keyword mining, human classification, frequency-based anomaly detection and network based classifiers -- independently. Now we consider combining the results of the previous classifiers and develop a meta-classifier. (See figure \ref{fig:roc_meta}) Concretely, we begin by selecting the classifier from each approach that has the largest area under the ROC curve. Then we use....
 
 \begin{figure} [h]
 \centering
