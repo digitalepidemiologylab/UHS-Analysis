@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  11 DEC 2013 15:03
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  11 DEC 2013 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -323,15 +323,20 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 
 ]
 Package epstopdf Info: Source file: <figs/key_exp_roc.eps>
-(epstopdf)                    date: 2013-12-04 03:00:00
-(epstopdf)                    size: 6069 bytes
+(epstopdf)                    date: 2013-12-11 15:49:45
+(epstopdf)                    size: 6078 bytes
 (epstopdf)             Output file: <figs/key_exp_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-04 04:15:38
-(epstopdf)                    size: 9428 bytes
+(epstopdf)                    date: 2013-12-11 15:49:09
+(epstopdf)                    size: 9503 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/key_exp_roc-eps-conve
 rted-to.pdf figs/key_exp_roc.eps>
 (epstopdf)             \includegraphics on input line 148.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(repstopdf --outfile=figs/key_exp_roc-eps-converted-to.pdf figs/key_ex
+p_roc.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <figs/key_exp_roc-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-11 15:49:53
+(epstopdf)                    size: 9506 bytes.
 
 <figs/key_exp_roc-eps-converted-to.pdf, id=14, 505.89pt x 505.89pt>
 File: figs/key_exp_roc-eps-converted-to.pdf Graphic file (type pdf)
@@ -341,11 +346,11 @@ Package pdftex.def Info: figs/key_exp_roc-eps-converted-to.pdf used on input li
 ne 148.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/key_dm_roc.eps>
-(epstopdf)                    date: 2013-12-11 13:14:41
-(epstopdf)                    size: 28027 bytes
+(epstopdf)                    date: 2013-12-11 15:24:39
+(epstopdf)                    size: 28036 bytes
 (epstopdf)             Output file: <figs/key_dm_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-11 13:14:52
-(epstopdf)                    size: 10598 bytes
+(epstopdf)                    date: 2013-12-11 15:24:46
+(epstopdf)                    size: 10760 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/key_dm_roc-eps-conver
 ted-to.pdf figs/key_dm_roc.eps>
 (epstopdf)             \includegraphics on input line 151.
@@ -371,14 +376,14 @@ Package epstopdf Info: Source file: <figs/meta_roc.eps>
 (epstopdf)                    size: 11780 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meta_roc-eps-converte
 d-to.pdf figs/meta_roc.eps>
-(epstopdf)             \includegraphics on input line 228.
+(epstopdf)             \includegraphics on input line 225.
 Package epstopdf Info: Output file is already uptodate.
 <figs/meta_roc-eps-converted-to.pdf, id=16, 505.89pt x 505.89pt>
 File: figs/meta_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/meta_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/meta_roc-eps-converted-to.pdf used on input line 
-228.
+225.
 (pdftex.def)             Requested size: 201.59692pt x 201.59592pt.
 
 
@@ -407,7 +412,7 @@ sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr
 /local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/
 texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive
 /2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on Bodnar_www2014.pdf (3 pages, 139265 bytes).
+Output written on Bodnar_www2014.pdf (3 pages, 139528 bytes).
 PDF statistics:
  75 PDF objects out of 1000 (max. 8388607)
  51 compressed objects within 1 object stream

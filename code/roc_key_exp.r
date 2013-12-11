@@ -10,7 +10,13 @@ files = c("../data/roc_keyword_expert_j48.arff","../data/roc_keyword_expert_logi
 
 colors = c("red","blue","green","orange","purple")
 
-plot(c(0,1),c(0,1),lty=2, xlim=c(0,1),ylim=c(0,1),type="l", xlab = "False Positive", ylab = "True Positive")
+
+plot(c(0,1),c(0,1),lty=2, xlim=c(0,1),ylim=c(0,1),type="l", xlab = NA, ylab = NA)
+
+mtext("False Positives",1, cex=2,line=3)
+mtext("True Positives",2,cex=2,line=2.5)
+mtext("A",3,line=-2,cex=4,at=-.15)
+
 
 for(x in 1:length(files))
 {
