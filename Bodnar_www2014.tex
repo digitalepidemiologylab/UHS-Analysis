@@ -61,7 +61,7 @@
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{3} %  in this sample file, there are a *total*
+\numberofauthors{4} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -76,17 +76,16 @@
 % affiliation/address with \affaddr, and tag the
 % e-mail address with \email.
 %
-% 1st. author
 \alignauthor
 Todd Bodnar\titlenote{Corresponding author}\\
        \affaddr{Pennsylvania State University}\\
 \affaddr{Department of Biology}\\
        \affaddr{University Park, PA 16802}\\
        \email{tjb5215@psu.edu}
-% 2nd. author
 \alignauthor
-Maybe Conrad, Maybe Vicky
-% 3rd. author
+Vicki Barclay
+\alignauthor
+Conrad S Tucker
 \alignauthor
 Marcel Salath\'e\\
        \affaddr{Pennsylvania State University}\\
@@ -117,6 +116,7 @@ Validation of this idea is important, but not done.
 
 Pull med info of individuals professionally diagnosed with ILI and their twitter accts. Compare old methods. Suggest some new things.
 
+In section 3 we describe the collection of diagnosis and Twitter information. In section 4 we consider extracting textual information from Tweets as a method for diagnosing influenza. In section 5 we consider anomalies in a user's Tweeting behavior as a signal for diagnosing influenza. In section 6 we extend these methods to other users on a persons social network to diagnose that person. In section 7 we aggregate the results of the previous classifiers to develop a more accurate classifier.
 \section{Related Work}
 
 People with issues \cite{Bodnar:2013we,Butler:2013uh,Lamb:2013to} also plos paper!
@@ -135,12 +135,12 @@ We received a total of 119 user accounts for Twitter from the survey; 15 of whic
 We collected data by calling the Twitter API on the user account that we queried the longest time ago. Tweets, profile and follower information queries have separate rate limits and were collected in parallel. The 104 seed accounts collected above were given higher priority over their friends and followers. In total, we collected 37,599 tweets from the seed accounts and XX tweets from YY accounts that they either followed or were followed by.
 
 
-\section{Signal Detection}
-\subsection{Text Based Signals}
+%\section{Signal Detection}
+\section{Text Based Signals}
 
 In this section, we consider diagnosis based on classifying an individual tweet's content as either about ILI or not. We begin by dividing the tweets into two sets: tweets that were posted the same month that a user was sick, and tweets that were posted other times. We find a total of 1609 tweets from 35 users in the first category.
 
-First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significant effect in 6 of the keywords during months when the user had ILI. (See table \ref{tab:tweet_keyword_expert_results}). Additionally, we try algorithmically selecting keywords by first finding the 12,393 most common keywords in the data set.  We then rank them based off of information gain and choose the top 10,100 or 1000 keywords from the list. In both of these cases, we preprocess the data by tokenizing the text on the characters ``.,;':"()?!'' - as well as spaces, tabs and line breaks - remove stop words\footnote{Stop words taken from Weka's stoplist version 3.7.10.}, perform Porter stemming \cite{Porter:1980dd,Willett:2006vb}  and convert the text to lower case. We then use the occurance or absence of these keywords as features for classification. We use naive bayes, random forest, J48, logistic regression and support vector machines to classify a user as being sick in a given month or not (see figure \ref{fig:roc_keyword}).
+First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significant effect in 6 of the keywords during months when the user had ILI. (See table \ref{tab:tweet_keyword_expert_results}). Additionally, we try algorithmically selecting keywords by first finding the 12,393 most common keywords in the data set.  We then rank them based off of information gain and choose the top 10, 100 or 1000 keywords from the list. In both of these cases, we preprocess the data by tokenizing the text on the characters ``.,;':"()?!'' - as well as spaces, tabs and line breaks - remove stop words\footnote{Stop words taken from Weka's stoplist version 3.7.10.}, perform Porter stemming \cite{Porter:1980dd,Willett:2006vb}  and convert the text to lower case. We then use the occurance or absence of these keywords as features for classification. We use naive bayes, random forest, J48, logistic regression and support vector machines to classify a user as being sick in a given month or not (see figure \ref{fig:roc_keyword}).
 
 \begin{figure} [h]
 \centering
@@ -156,7 +156,7 @@ First we go the route of AUTHOR and AUTHOR by defining a set of keywords that ar
 
 
 
-Additionally, we hand rate all 1609 tweets, that were posted by individuals during the time of their illness,  for information regarding the user's health. Additionally we sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find 58 tweets from 17 (\(17/35 = 48.57\%\))  individuals in our study that are about the user being sick. We also find zero tweets about ILI during times when they did \textit{not} have ILI. Thus we would expect a health monitoring system based off of tweet classification to operate with at most 82.18\% accuracy. (See table \ref{tab:tweet_classified_confusion})
+Additionally, we hand rate all 1609 tweets, that were posted by individuals during the time of their illness,  for information regarding the user's health. Additionally we sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find 58 tweets from 17 (\(17/35 = 48.57\%\))  individuals in our study that are about the user being sick. We also find zero tweets about ILI during times when they did \textit{not} have ILI. While the use of a ``human'' classifier clearly does not scale, it allows for an approxamatly 100.0\% accurate classification. Since regular machine learning algorithms preform much worse than 100.0\% accuracy, the human classifier gives us an upper limit to the accuracy of  a health monitoring system based off of tweet classification . (See table \ref{tab:tweet_classified_confusion})
 
 %\include{tables/keyword_expert_odds.tex}
 
@@ -182,7 +182,7 @@ Sick&Not Sick&\ \\ \hline
 \label{tab:tweet_classified_confusion}
 \end{table}
 
-\subsection{Frequency Based Signals}
+\section{Frequency Based Signals}
 
 We perform one-dimensional anomaly detection on each user's monthly tweeting rate as follows. First, we calculate the number of tweets in each month in the study period and discard any months where the user tweets less than ten times. This avoids issues caused by the user starting or stopping to use Twitter. We then calculate the z-score of the tweeting rate of the month that the user is ill by
 
@@ -210,7 +210,7 @@ Sick&Not Sick&\ \\ \hline
 \label{tab:tweet_anomaly_confusion}
 \end{table}
 
-\subsection{Network Based Signals}
+\section{Network Based Signals}
 
 Preliminary idea. Cascade effects causing echoes on social network. Also consider friends becoming ill around same time. Check @ tag
 
@@ -227,7 +227,6 @@ To this point, we have considered five approaches to detecting illness -- keywor
 \label{fig:roc_meta}
 \end{figure}
 
-\section{Analysis}
 
 \section{Conclusions}
 
