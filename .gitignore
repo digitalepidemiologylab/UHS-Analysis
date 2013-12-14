@@ -27,3 +27,5 @@ data/all_keyword_vector.arff
 
 data/private/*
 figs/meta_roc-eps-converted-to.pdf
+
+tables/.RData

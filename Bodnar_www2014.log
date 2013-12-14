@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  14 DEC 2013 14:37
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  14 DEC 2013 15:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -328,11 +328,11 @@ Overfull \hbox (83.19995pt too wide) in paragraph at lines 97--97
 
 ]
 Package epstopdf Info: Source file: <figs/key_exp_roc.eps>
-(epstopdf)                    date: 2013-12-11 15:49:45
+(epstopdf)                    date: 2013-12-14 15:20:33
 (epstopdf)                    size: 6078 bytes
 (epstopdf)             Output file: <figs/key_exp_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-11 15:49:53
-(epstopdf)                    size: 9506 bytes
+(epstopdf)                    date: 2013-12-14 15:38:55
+(epstopdf)                    size: 9492 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/key_exp_roc-eps-conve
 rted-to.pdf figs/key_exp_roc.eps>
 (epstopdf)             \includegraphics on input line 148.
@@ -346,11 +346,11 @@ Package pdftex.def Info: figs/key_exp_roc-eps-converted-to.pdf used on input li
 ne 148.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/key_dm_roc.eps>
-(epstopdf)                    date: 2013-12-11 15:24:39
+(epstopdf)                    date: 2013-12-14 15:20:33
 (epstopdf)                    size: 28036 bytes
 (epstopdf)             Output file: <figs/key_dm_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-11 15:24:46
-(epstopdf)                    size: 10760 bytes
+(epstopdf)                    date: 2013-12-14 15:38:56
+(epstopdf)                    size: 10734 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/key_dm_roc-eps-conver
 ted-to.pdf figs/key_dm_roc.eps>
 (epstopdf)             \includegraphics on input line 151.
@@ -369,20 +369,15 @@ Overfull \hbox (5.06526pt too wide) in paragraph at lines 187--188
  []
 
 Package epstopdf Info: Source file: <figs/meta_roc.eps>
-(epstopdf)                    date: 2013-12-14 14:35:41
+(epstopdf)                    date: 2013-12-14 15:24:50
 (epstopdf)                    size: 72165 bytes
 (epstopdf)             Output file: <figs/meta_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-14 14:30:25
-(epstopdf)                    size: 11705 bytes
+(epstopdf)                    date: 2013-12-14 15:38:58
+(epstopdf)                    size: 11643 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meta_roc-eps-converte
 d-to.pdf figs/meta_roc.eps>
 (epstopdf)             \includegraphics on input line 226.
-runsystem(repstopdf --outfile=figs/meta_roc-eps-converted-to.pdf figs/meta_roc.
-eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <figs/meta_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-14 14:37:12
-(epstopdf)                    size: 11705 bytes.
+Package epstopdf Info: Output file is already uptodate.
 <figs/meta_roc-eps-converted-to.pdf, id=15, 505.89pt x 505.89pt>
 File: figs/meta_roc-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -391,20 +386,15 @@ Package pdftex.def Info: figs/meta_roc-eps-converted-to.pdf used on input line
 226.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/meta_roc_final.eps>
-(epstopdf)                    date: 2013-12-14 14:35:41
+(epstopdf)                    date: 2013-12-14 15:24:50
 (epstopdf)                    size: 4356 bytes
 (epstopdf)             Output file: <figs/meta_roc_final-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-14 14:30:26
-(epstopdf)                    size: 9176 bytes
+(epstopdf)                    date: 2013-12-14 15:38:59
+(epstopdf)                    size: 9152 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meta_roc_final-eps-co
 nverted-to.pdf figs/meta_roc_final.eps>
 (epstopdf)             \includegraphics on input line 229.
-runsystem(repstopdf --outfile=figs/meta_roc_final-eps-converted-to.pdf figs/met
-a_roc_final.eps)...executed safely (allowed).
-
-Package epstopdf Info: Result file: <figs/meta_roc_final-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-14 14:37:13
-(epstopdf)                    size: 9179 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <figs/meta_roc_final-eps-converted-to.pdf, id=16, 505.89pt x 505.89pt>
 File: figs/meta_roc_final-eps-converted-to.pdf Graphic file (type pdf)
@@ -440,7 +430,7 @@ pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pf
 b></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
 /local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/
 texlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on Bodnar_www2014.pdf (3 pages, 146394 bytes).
+Output written on Bodnar_www2014.pdf (3 pages, 146304 bytes).
 PDF statistics:
  83 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream
