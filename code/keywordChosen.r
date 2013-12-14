@@ -16,6 +16,16 @@ makeWordVector <- function(text){
     return(unique(SnowballStemmer(NGramTokenizer(tolower(text),Weka_control(min=1,max=1)))))
 }
 
+
+nice_p <- function(x)
+{
+if(x > .0001)
+{
+return(round(x,digits=4))
+}
+return(" \\textless 0.0001 ")
+}
+
 library(RMySQL)
 proc.time() -> startTime
 mydb = dbConnect(MySQL(), user='root',password='root',dbname='uhs_stalker', host='127.0.0.1', port=8889)
@@ -57,7 +67,7 @@ nsick_neg = nsick_neg + 1
 
 }
 }
-cat(keyword,"&",(sick_pos+nsick_pos),"&",oddsratio.fisher(c(sick_pos,sick_neg,nsick_pos,nsick_neg))$measure[2,1],"&",oddsratio.fisher(c(sick_pos,sick_neg,nsick_pos,nsick_neg))$p.value[2,3],"\\ \\\\ \\hline \n",sep="",file="keyword_expert_odds.tex",append=TRUE)
+cat(keyword,"&",(sick_pos+nsick_pos),"&",format(round(oddsratio.fisher(c(sick_pos,sick_neg,nsick_pos,nsick_neg))$measure[2,1],digits=2),nsmall=2),"&",nice_p(oddsratio.fisher(c(sick_pos,sick_neg,nsick_pos,nsick_neg))$p.value[2,3]),"\\ \\\\ \\hline \n",sep="",file="keyword_expert_odds.tex",append=TRUE)
 cat(keyword,",",sick_pos,",",sick_neg,",",nsick_pos,",",nsick_neg,",",total,"\n")
 }
 
