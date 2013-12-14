@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  12 DEC 2013 00:44
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  14 DEC 2013 14:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -369,22 +369,50 @@ Overfull \hbox (5.06526pt too wide) in paragraph at lines 187--188
  []
 
 Package epstopdf Info: Source file: <figs/meta_roc.eps>
-(epstopdf)                    date: 2013-12-11 14:37:07
-(epstopdf)                    size: 72020 bytes
+(epstopdf)                    date: 2013-12-14 14:35:41
+(epstopdf)                    size: 72165 bytes
 (epstopdf)             Output file: <figs/meta_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-11 14:38:46
-(epstopdf)                    size: 11780 bytes
+(epstopdf)                    date: 2013-12-14 14:30:25
+(epstopdf)                    size: 11705 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meta_roc-eps-converte
 d-to.pdf figs/meta_roc.eps>
-(epstopdf)             \includegraphics on input line 225.
-Package epstopdf Info: Output file is already uptodate.
+(epstopdf)             \includegraphics on input line 226.
+runsystem(repstopdf --outfile=figs/meta_roc-eps-converted-to.pdf figs/meta_roc.
+eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <figs/meta_roc-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-14 14:37:12
+(epstopdf)                    size: 11705 bytes.
 <figs/meta_roc-eps-converted-to.pdf, id=15, 505.89pt x 505.89pt>
 File: figs/meta_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/meta_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/meta_roc-eps-converted-to.pdf used on input line 
-225.
-(pdftex.def)             Requested size: 201.59692pt x 201.59592pt.
+226.
+(pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
+Package epstopdf Info: Source file: <figs/meta_roc_final.eps>
+(epstopdf)                    date: 2013-12-14 14:35:41
+(epstopdf)                    size: 4356 bytes
+(epstopdf)             Output file: <figs/meta_roc_final-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-14 14:30:26
+(epstopdf)                    size: 9176 bytes
+(epstopdf)             Command: <repstopdf --outfile=figs/meta_roc_final-eps-co
+nverted-to.pdf figs/meta_roc_final.eps>
+(epstopdf)             \includegraphics on input line 229.
+runsystem(repstopdf --outfile=figs/meta_roc_final-eps-converted-to.pdf figs/met
+a_roc_final.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <figs/meta_roc_final-eps-converted-to.pdf>
+(epstopdf)                    date: 2013-12-14 14:37:13
+(epstopdf)                    size: 9179 bytes.
+
+<figs/meta_roc_final-eps-converted-to.pdf, id=16, 505.89pt x 505.89pt>
+File: figs/meta_roc_final-eps-converted-to.pdf Graphic file (type pdf)
+
+<use figs/meta_roc_final-eps-converted-to.pdf>
+Package pdftex.def Info: figs/meta_roc_final-eps-converted-to.pdf used on input
+ line 229.
+(pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -392,30 +420,30 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 (./Bodnar_www2014.bbl [2 <./figs/key_exp_roc-eps-converted-to.pdf> <./figs/key_
 dm_roc-eps-converted-to.pdf>]) [3
 
- <./figs/meta_roc-eps-converted-to.pdf>]
-(./Bodnar_www2014.aux) ) 
+ <./figs/meta_roc-eps-converted-to.pdf> <./figs/meta_roc_final-eps-converted-to
+.pdf>] (./Bodnar_www2014.aux) ) 
 Here is how much of TeX's memory you used:
- 3872 strings out of 493488
- 55318 string characters out of 3141326
+ 3877 strings out of 493488
+ 55515 string characters out of 3141326
  119584 words of memory out of 3000000
- 7094 multiletter control sequences out of 15000+200000
+ 7098 multiletter control sequences out of 15000+200000
  49468 words of font info for 67 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
- 41i,12n,38p,1245b,370s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/local/texlive/2012/texmf-dist/fonts/enc/dvips/bas
-e/8r.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmb
-x9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9
-.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pf
-b></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><
-/usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></u
-sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr
-/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/
-texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive
-/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on Bodnar_www2014.pdf (3 pages, 140132 bytes).
+ 41i,12n,38p,1245b,371s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/local/texlive/2012/texmf-dist/fonts/enc/dv
+ips/base/8r.enc}</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.
+pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pf
+b></usr/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
+/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/
+texlive/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
+Output written on Bodnar_www2014.pdf (3 pages, 146394 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 51 compressed objects within 1 object stream
+ 83 PDF objects out of 1000 (max. 8388607)
+ 56 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
