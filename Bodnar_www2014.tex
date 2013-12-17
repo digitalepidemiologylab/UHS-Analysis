@@ -110,6 +110,13 @@ This is an abstract
 \keywords{Twitter, Validation, Digital Epidemiology, Remote Diagnosis} % NOT required for Proceedings
 
 \section{Introduction}
+Digital epidemiology, datamining Internet records to approach epidemological questions in novel ways, has recently SOMETHING.  
+
+Previous work has generally focused on methods to replicate the patterns found in traditional surveilance networks[]. However, these methods have several limitations. First, they cannot generally differentiate between an individual with an illness and an individual that is worried about an illness[]. This may have resulted in a predicted influenza rate that was much higher then the actual 2013 influenza rate[]. Second, these methods cannot be extended to areas without a previous surveillance network. Finally, these methods are fundamentially incapapble of detecting diseases that do not show strong spatio-temporal patters such as mental illness, obesity or Parkinson's disease[]. 
+
+We present a system for online disease diagnosis through Twitter that has been trained on individuals that had been previously diagnosed by medical professionals. Instead of top-down methods to measure levels of disease in a population, we approach this problem from the bottom-up. This addresses all three of these issues: we only diagnose individuals that are likely to have the disease, and not just interested in the disease; we do not require previous data when applying these methods to new problems or locations; and these methods can easily generalize to diseases that do not show strong patters because we focus on an individual by individual level.
+
+
 Digital epidemiology \(\to\) novel disease detection mechanisms.
 
 Validation of this idea is important, but not done.
@@ -238,6 +245,9 @@ To this point, we have considered five approaches to detecting illness -- keywor
  
 
 Comment on \(\sim\) 250 mill active T users \(\to\) 75 mill active US users, possibility of detecting \(\sim\) 10\% anual ILI rate, \(\sim\) half are detectable on twitter Twitter, so 12.5 mill cases as upper estimate.
+
+
+In this paper, we have shown that it is possible to diagnose an individual based off of her social media data with high accuracy. Computation approaches to aid in disease diagnosis has been approached before[], however they have been developed with a medical setting in mind. That is, the problem addressed was ``can we diagnose an individual based off data gathered from medical tests run on her?'' instead of ``can we diagnose an individual solely based off of publically available social media data?''  While we focus on the relativly benign case of remotely reconstructing a confidental diagnosis of influenza, these methods could also be applied to stigmatized diseases, such as HIV, where being able to determine if an individual is HIV positive without her knowledge and with only her Twitter handle could result in serious social or economic effects.
 
 %\begin{thebibliography}{1}
 %\bibitem{Ford:1956vc}
