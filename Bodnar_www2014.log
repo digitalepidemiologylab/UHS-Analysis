@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  19 DEC 2013 10:26
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  19 DEC 2013 11:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -304,17 +304,17 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 98.
+LaTeX Font Info:    Try loading font information for U+msa on input line 101.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 98.
+LaTeX Font Info:    Try loading font information for U+msb on input line 101.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+lasy on input line 98.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 101.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -330,7 +330,7 @@ Package epstopdf Info: Source file: <figs/key_exp_roc.eps>
 (epstopdf)                    size: 9492 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/key_exp_roc-eps-conve
 rted-to.pdf figs/key_exp_roc.eps>
-(epstopdf)             \includegraphics on input line 156.
+(epstopdf)             \includegraphics on input line 159.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/key_exp_roc-eps-converted-to.pdf, id=13, 505.89pt x 505.89pt>
@@ -338,7 +338,7 @@ File: figs/key_exp_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/key_exp_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/key_exp_roc-eps-converted-to.pdf used on input li
-ne 156.
+ne 159.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/key_dm_roc.eps>
 (epstopdf)                    date: 2013-12-14 15:49:36
@@ -348,7 +348,7 @@ Package epstopdf Info: Source file: <figs/key_dm_roc.eps>
 (epstopdf)                    size: 10734 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/key_dm_roc-eps-conver
 ted-to.pdf figs/key_dm_roc.eps>
-(epstopdf)             \includegraphics on input line 159.
+(epstopdf)             \includegraphics on input line 162.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/key_dm_roc-eps-converted-to.pdf, id=14, 505.89pt x 505.89pt>
@@ -356,7 +356,7 @@ File: figs/key_dm_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/key_dm_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/key_dm_roc-eps-converted-to.pdf used on input lin
-e 159.
+e 162.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/keyword_legend.eps>
 (epstopdf)                    date: 2013-12-18 15:23:59
@@ -366,7 +366,7 @@ Package epstopdf Info: Source file: <figs/keyword_legend.eps>
 (epstopdf)                    size: 9480 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/keyword_legend-eps-co
 nverted-to.pdf figs/keyword_legend.eps>
-(epstopdf)             \includegraphics on input line 162.
+(epstopdf)             \includegraphics on input line 165.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/keyword_legend-eps-converted-to.pdf, id=15, 512.91624pt x 25.09375pt>
@@ -374,14 +374,14 @@ File: figs/keyword_legend-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/keyword_legend-eps-converted-to.pdf>
 Package pdftex.def Info: figs/keyword_legend-eps-converted-to.pdf used on input
- line 162.
+ line 165.
 (pdftex.def)             Requested size: 226.79846pt x 11.09564pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 (./tables/keyword_expert_odds.tex)
-Overfull \hbox (5.06526pt too wide) in paragraph at lines 198--199
+Overfull \hbox (5.06526pt too wide) in paragraph at lines 201--202
 \T1/aer/m/n/9 We per-form one-dimensional anomaly de-tec-tion on each user's
  []
 
@@ -395,7 +395,7 @@ Package epstopdf Info: Source file: <figs/meta_roc.eps>
 (epstopdf)                    size: 11643 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meta_roc-eps-converte
 d-to.pdf figs/meta_roc.eps>
-(epstopdf)             \includegraphics on input line 237.
+(epstopdf)             \includegraphics on input line 240.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/meta_roc-eps-converted-to.pdf, id=42, 505.89pt x 505.89pt>
@@ -403,7 +403,7 @@ File: figs/meta_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/meta_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/meta_roc-eps-converted-to.pdf used on input line 
-237.
+240.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/meta_roc_final.eps>
 (epstopdf)                    date: 2013-12-14 15:53:40
@@ -413,7 +413,7 @@ Package epstopdf Info: Source file: <figs/meta_roc_final.eps>
 (epstopdf)                    size: 9152 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meta_roc_final-eps-co
 nverted-to.pdf figs/meta_roc_final.eps>
-(epstopdf)             \includegraphics on input line 240.
+(epstopdf)             \includegraphics on input line 243.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/meta_roc_final-eps-converted-to.pdf, id=43, 505.89pt x 505.89pt>
@@ -421,7 +421,7 @@ File: figs/meta_roc_final-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/meta_roc_final-eps-converted-to.pdf>
 Package pdftex.def Info: figs/meta_roc_final-eps-converted-to.pdf used on input
- line 240.
+ line 243.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
  (./Bodnar_www2014.bbl) [3 <./figs/meta_roc-eps-converted-to.pdf> <./figs/meta_
 roc_final-eps-converted-to.pdf>]
@@ -444,7 +444,7 @@ sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr
 /local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/
 texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive
 /2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on Bodnar_www2014.pdf (3 pages, 154506 bytes).
+Output written on Bodnar_www2014.pdf (3 pages, 154164 bytes).
 PDF statistics:
  91 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
