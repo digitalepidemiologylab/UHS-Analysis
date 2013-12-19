@@ -79,18 +79,19 @@
 \alignauthor
 Todd Bodnar\titlenote{Corresponding author}\\
        \affaddr{Pennsylvania State University}\\
-\affaddr{Department of Biology}\\
-       \affaddr{University Park, PA 16802}\\
+\affaddr{Center for Infectious Disease \\Dynamics and Department \\of Biology}\\
+ %      \affaddr{University Park, PA 16802}\\
        \email{tjb5215@psu.edu}
 \alignauthor
-Vicki Barclay
+Vicki Barclay\\
+\and 
 \alignauthor
-Conrad S Tucker
+Conrad S Tucker\\
 \alignauthor
 Marcel Salath\'e\\
        \affaddr{Pennsylvania State University}\\
-\affaddr{Department of Biology}\\
-       \affaddr{University Park, PA 16802}\\
+\affaddr{Center for Infectious Disease \\Dynamics and Department \\of Biology}\\
+%       \affaddr{University Park, PA 16802}\\
        \email{salathe@psu.edu}
 }
 
@@ -116,14 +117,13 @@ Previous work has generally focused on methods to replicate the patterns found i
 
 We present a system for online disease diagnosis through Twitter that has been trained on individuals that had been previously diagnosed by medical professionals. Instead of top-down methods to measure levels of disease in a population, we approach this problem from the bottom-up. This addresses all three of these issues: we only diagnose individuals that are likely to have the disease, and not just interested in the disease; we do not require previous data when applying these methods to new problems or locations; and these methods can easily generalize to diseases that do not show strong patters because we focus on an individual by individual level.
 
+%Digital epidemiology \(\to\) novel disease detection mechanisms.
+%
+%Validation of this idea is important, but not done.
+%
+%Pull med info of individuals professionally diagnosed with ILI and their twitter accts. Compare old methods. Suggest some new things.
 
-Digital epidemiology \(\to\) novel disease detection mechanisms.
-
-Validation of this idea is important, but not done.
-
-Pull med info of individuals professionally diagnosed with ILI and their twitter accts. Compare old methods. Suggest some new things.
-
-In section 3 we describe the collection of diagnosis and Twitter information. In section 4 we consider extracting textual information from Tweets as a method for diagnosing influenza. In section 5 we consider anomalies in a user's Tweeting behavior as a signal for diagnosing influenza. In section 6 we extend these methods to other users on a persons social network to diagnose that person. In section 7 we aggregate the results of the previous classifiers to develop a more accurate classifier.
+We develop this diagnosis system as follows. In section 3 we describe the collection of diagnosis and Twitter information. In section 4 we consider extracting textual information from Tweets as a method for diagnosing influenza. In section 5 we consider anomalies in a user's Tweeting behavior as a signal for diagnosing influenza. In section 6 we extend these methods to other users on a persons social network to diagnose that person. In section 7 we aggregate the results of the previous classifiers to develop a more accurate classifier.
 \section{Related Work}
 
 People with issues \cite{Bodnar:2013we,Butler:2013uh,Lamb:2013to} also plos paper!
@@ -139,15 +139,16 @@ Tweet classification \cite{Culotta:2010hx,Lamb:2013to,Salathe:2011gr}
 \subsection{Twitter Records}
 We received a total of 119 user accounts for Twitter from the survey; 15 of which were discarded because the associated accounts were either non-existent, banned, or private. For each of the remaining 104 accounts, we pulled their profile information, their friends and followers information, their most recent 3000 tweets, and their friends profiles and tweets. Some users did not tweet during the month that they were sick; we kept those accounts as part of the control group. We were limited to the most recent 3000 tweets by Twitter's time line query, but this only effected two accounts -- both of which posted multiple times per hour and were thrown out because we could only look back a few days.
 
-We collected data by calling the Twitter API on the user account that we queried the longest time ago. Tweets, profile and follower information queries have separate rate limits and were collected in parallel. The 104 seed accounts collected above were given higher priority over their friends and followers. In total, we collected 37,599 tweets from the seed accounts and XX tweets from YY accounts that they either followed or were followed by.
+We collected data by calling the Twitter API on the user account that we queried the longest time ago. Tweets, profile and follower information queries have separate rate limits and were collected in parallel. The 104 seed accounts collected above were given higher priority over their friends and followers. In total, we collected 37,599 tweets from the seed accounts and XX tweets from 913,082 accounts that they either followed or were followed by.
 
+%select count(distinct(d_net.user)) from (select distinct(user) as user from tweets_network) as d_net left join tweets on d_net.user = tweets.user where tweets.user is null;
 
 %\section{Signal Detection}
 \section{Text Based Signals}
 
 In this section, we consider diagnosis based on classifying an individual tweet's content as either about ILI or not. We begin by dividing the tweets into two sets: tweets that were posted the same month that a user was sick, and tweets that were posted other times. We find a total of 1609 tweets from 35 users in the first category.
 
-First we go the route of AUTHOR and AUTHOR by defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significant effect in 6 of the keywords during months when the user had ILI. (See table \ref{tab:tweet_keyword_expert_results}). Additionally, we try algorithmically selecting keywords by first finding the 12,393 most common keywords in the data set.  We then rank them based off of information gain and choose the top 10, 100 or 1000 keywords from the list. In both of these cases, we preprocess the data by tokenizing the text on the characters ``.,;':"()?!'' - as well as spaces, tabs and line breaks - remove stop words\footnote{Stop words taken from Weka's stoplist version 3.7.10.}, perform Porter stemming \cite{Porter:1980dd,Willett:2006vb}  and convert the text to lower case. We then use the occurance or absence of these keywords as features for classification. We use naive bayes, random forest, J48, logistic regression and support vector machines to classify a user as being sick in a given month or not (see figure \ref{fig:roc_keyword}).
+First we go the route of defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significant effect in 6 of the keywords during months when the user had ILI. (See table \ref{tab:tweet_keyword_expert_results}). Additionally, we try algorithmically selecting keywords by first finding the 12,393 most common keywords in the data set.  We then rank them based off of information gain and choose the top 10, 100 or 1000 keywords from the list. In both of these cases, we preprocess the data by tokenizing the text on the characters ``.,;':"()?!'' - as well as spaces, tabs and line breaks - remove stop words\footnote{Stop words taken from Weka's stoplist version 3.7.10.}, perform Porter stemming \cite{Porter:1980dd,Willett:2006vb}  and convert the text to lower case. We then use the occurance or absence of these keywords as features for classification. We use naive bayes, random forest, J48, logistic regression and support vector machines to classify a user as being sick in a given month or not (see figure \ref{fig:roc_keyword}).
 
 \begin{figure} [h]
 \centering
@@ -157,7 +158,10 @@ First we go the route of AUTHOR and AUTHOR by defining a set of keywords that ar
 \begin{subfigure}[b]{.2\textwidth}
 \includegraphics[width=\textwidth]{figs/key_dm_roc.eps}
 \end{subfigure}
-\caption{The ROC of classifiers that use hand chosen keywords (a) and algorithmically chosen keywords (b) to determine if an individual is ill. The top 10 (solid line), 100 (dashed line) and 1000 (dotted line) were selected as the features. (COMMENT: untill I add it to figures. Green is Naive bayes, red is j48, blue is logistic, orange is random forest and purple is SVM.)}
+\begin{subfigure}[b]{.45\textwidth}
+\includegraphics[width=\textwidth]{figs/keyword_legend.eps}
+\end{subfigure}
+\caption{The ROC of classifiers that use hand chosen keywords (a) and algorithmically chosen keywords (b) to determine if an individual is ill. The top 10 (solid line), 100 (dashed line) and 1000 (dotted line) were selected as the features.}
 \label{fig:roc_keyword}
 \end{figure}
 
