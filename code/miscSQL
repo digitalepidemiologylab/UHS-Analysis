@@ -9,3 +9,31 @@ FROM tweets
 INNER JOIN users ON users.userID = tweets.user
 GROUP BY user, month_index
 ) AS a
+
+
+
+
+#Select all text by friends grouped by month and user
+#maybe....
+
+SELECT *
+FROM (
+
+SELECT sick_month, GROUP_CONCAT( tweets_network.TEXT
+SEPARATOR  ' ' ) AS c
+FROM tweets_network
+INNER JOIN network on network.object=tweets_network.user INNER JOIN users on users.userID=network.subject INNER JOIN tweets ON users.userID = tweets.user
+where tweets_network.month_index = tweets.month_index GROUP BY users.userID, tweets.month_index
+) AS a;
+
+
+#select all text for a given user + month + verb
+
+SELECT *
+FROM (
+
+SELECT GROUP_CONCAT( TEXT
+SEPARATOR  ' ' ) AS c
+FROM tweets_network where tweets_network.`user` in (select object from network where subject = "14147854" and verb = "follower") AND tweets_network.month_index=5
+) AS text, (select 5) as month_index, (select 14147854) as user, (select 1) as sick_month
+;
