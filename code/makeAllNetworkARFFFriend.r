@@ -45,7 +45,7 @@ user = users[user_iter,]
 for( month_iter in 8:17)
 {
 
-text = fetch(dbSendQuery(mydb, paste("SELECT GROUP_CONCAT( TEXT SEPARATOR  ' ' ) AS c from tweets_network where tweets_network.user in (select object from network where subject = '",users$userID,"' and verb = \"friend\") AND month_index=",month_iter)))
+text = fetch(dbSendQuery(mydb, paste("SELECT GROUP_CONCAT( TEXT SEPARATOR  ' ' ) AS c from tweets_network where tweets_network.user in (select object from network where subject = '",user$userID,"' and verb = \"friend\") AND month_index=",month_iter)))
 
 if(length(text$c) > 0)
 {
