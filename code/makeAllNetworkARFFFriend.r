@@ -1,7 +1,16 @@
+options(java.parameters = "-d64 -Xmx16000m")
+
 library(RMySQL)
 
 Sys.setenv(NOAWT=1)
 library("RWeka")
+
+
+replace_bad_char <- function(text)
+{
+return(gsub("  "," ",gsub("\""," ", gsub("'"," ", gsub(","," ",gsub("%", " ",gsub("\n"," ",gsub("\t"," ", text))))))))
+}
+
 
 sick_in_month <- function(user, month)
 {
@@ -50,7 +59,7 @@ text = fetch(dbSendQuery(mydb, paste("SELECT GROUP_CONCAT( TEXT SEPARATOR  ' ' )
 if(length(text$c) > 0)
 {
 sick_array=c(sick_array, sick_in_month(user, month_iter))
-text_array = c(text_array, text$c)
+text_array = c(text_array, replace_bad_char(text$c))
 }
 
 }
@@ -58,5 +67,5 @@ text_array = c(text_array, text$c)
 }
 
 
-write.arff(data.frame(sick_array, text_array),"friends.arff")
-
+#write.arff(data.frame(sick_array, text_array),"friends.arff")
+write.csv(data.frame(sick_array, text_array),"../data/private/friends.csv")

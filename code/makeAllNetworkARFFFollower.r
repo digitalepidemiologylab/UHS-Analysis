@@ -1,3 +1,5 @@
+options(java.parameters = "-d64 -Xmx16000m")
+
 library(RMySQL)
 
 Sys.setenv(NOAWT=1)
@@ -27,6 +29,11 @@ if(month == 17)
    return(user$sick_may)
 }
 
+replace_bad_char <- function(text)
+{
+return(gsub("  "," ",gsub("\""," ", gsub("'"," ", gsub(","," ",gsub("%", " ",gsub("\n"," ",gsub("\t"," ", text))))))))
+}
+
 
 proc.time() -> startTime
 mydb = dbConnect(MySQL(), user='root',password='root',dbname='uhs_stalker', host='127.0.0.1', port=8889)
@@ -47,10 +54,11 @@ for( month_iter in 8:17)
 
 text = fetch(dbSendQuery(mydb, paste("SELECT GROUP_CONCAT( TEXT SEPARATOR  ' ' ) AS c from tweets_network where tweets_network.user in (select object from network where subject = '",user$userID,"' and verb = \"follower\") AND month_index=",month_iter)))
 
+
 if(length(text$c) > 0)
 {
 sick_array=c(sick_array, sick_in_month(user, month_iter))
-text_array = c(text_array, text$c)
+text_array = c(text_array, replace_bad_char(text$c))
 }
 
 }
@@ -58,5 +66,5 @@ text_array = c(text_array, text$c)
 }
 
 
-write.arff(data.frame(sick_array, text_array),"followers.arff")
-
+##write.arff(data.frame(sick_array, text_array),"followers.arff")
+write.csv(data.frame(sick_array, text_array), "../data/private/followers.csv")
