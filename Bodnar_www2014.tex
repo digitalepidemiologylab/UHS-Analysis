@@ -231,6 +231,21 @@ Preliminary idea. Cascade effects causing echoes on social network. Also conside
 %follower 12393
 %friend 11595
 
+\begin{figure} [h]
+\centering
+\begin{subfigure}[b]{.2\textwidth}
+\includegraphics[width=\textwidth]{figs/followers_roc.eps}
+\end{subfigure}
+\begin{subfigure}[b]{.2\textwidth}
+\includegraphics[width=\textwidth]{figs/friends_roc.eps}
+\end{subfigure}
+\begin{subfigure}[b]{.45\textwidth}
+\includegraphics[width=\textwidth]{figs/keyword_legend.eps}
+\end{subfigure}
+\caption{The ROC of classifiers based off Tweets from (a) accounts that follow a user and (b) accounts that a user follows. Line coloring and style are equivalent to figure \ref{fig:roc_keyword}.}
+\label{fig:roc_network}
+\end{figure}
+
 \section{Meta Classifier}
 
 Combine features based off of previous signals, get something that's -- hopefully -- more accurate.
