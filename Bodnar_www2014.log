@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  3 JAN 2014 21:44
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  4 JAN 2014 16:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -326,14 +326,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Package epstopdf Info: Source file: <figs/key_exp_roc.eps>
-(epstopdf)                    date: 2013-12-31 20:52:19
+(epstopdf)                    date: 2014-01-04 16:08:24
 (epstopdf)                    size: 6078 bytes
 (epstopdf)             Output file: <figs/key_exp_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-31 21:26:50
+(epstopdf)                    date: 2014-01-04 16:12:34
 (epstopdf)                    size: 9506 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/key_exp_roc-eps-conve
 rted-to.pdf figs/key_exp_roc.eps>
-(epstopdf)             \includegraphics on input line 163.
+(epstopdf)             \includegraphics on input line 165.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/key_exp_roc-eps-converted-to.pdf, id=13, 505.89pt x 505.89pt>
@@ -341,17 +341,17 @@ File: figs/key_exp_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/key_exp_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/key_exp_roc-eps-converted-to.pdf used on input li
-ne 163.
+ne 165.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/key_dm_roc.eps>
-(epstopdf)                    date: 2013-12-31 20:52:20
+(epstopdf)                    date: 2014-01-04 16:08:24
 (epstopdf)                    size: 28036 bytes
 (epstopdf)             Output file: <figs/key_dm_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-31 21:26:52
+(epstopdf)                    date: 2014-01-04 16:12:35
 (epstopdf)                    size: 10760 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/key_dm_roc-eps-conver
 ted-to.pdf figs/key_dm_roc.eps>
-(epstopdf)             \includegraphics on input line 166.
+(epstopdf)             \includegraphics on input line 168.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/key_dm_roc-eps-converted-to.pdf, id=14, 505.89pt x 505.89pt>
@@ -359,17 +359,17 @@ File: figs/key_dm_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/key_dm_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/key_dm_roc-eps-converted-to.pdf used on input lin
-e 166.
+e 168.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/keyword_legend.eps>
-(epstopdf)                    date: 2013-12-31 20:52:17
+(epstopdf)                    date: 2014-01-04 16:08:22
 (epstopdf)                    size: 3670 bytes
 (epstopdf)             Output file: <figs/keyword_legend-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-31 21:26:54
+(epstopdf)                    date: 2014-01-04 16:12:36
 (epstopdf)                    size: 9475 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/keyword_legend-eps-co
 nverted-to.pdf figs/keyword_legend.eps>
-(epstopdf)             \includegraphics on input line 169.
+(epstopdf)             \includegraphics on input line 171.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/keyword_legend-eps-converted-to.pdf, id=15, 609.27625pt x 25.09375pt>
@@ -377,25 +377,25 @@ File: figs/keyword_legend-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/keyword_legend-eps-converted-to.pdf>
 Package pdftex.def Info: figs/keyword_legend-eps-converted-to.pdf used on input
- line 169.
+ line 171.
 (pdftex.def)             Requested size: 226.79846pt x 9.34082pt.
 
 (./tables/keyword_expert_odds.tex)
-Overfull \hbox (5.06526pt too wide) in paragraph at lines 205--206
+Overfull \hbox (5.06526pt too wide) in paragraph at lines 207--208
 \T1/aer/m/n/9 We per-form one-dimensional anomaly de-tec-tion on each user's
  []
 
 [2 <./figs/key_exp_roc-eps-converted-to.pdf> <./figs/key_dm_roc-eps-converted-t
 o.pdf> <./figs/keyword_legend-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figs/followers_roc.eps>
-(epstopdf)                    date: 2013-12-31 20:52:20
+(epstopdf)                    date: 2014-01-04 16:08:24
 (epstopdf)                    size: 49795 bytes
 (epstopdf)             Output file: <figs/followers_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-31 21:26:56
+(epstopdf)                    date: 2014-01-04 16:12:37
 (epstopdf)                    size: 11318 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/followers_roc-eps-con
 verted-to.pdf figs/followers_roc.eps>
-(epstopdf)             \includegraphics on input line 241.
+(epstopdf)             \includegraphics on input line 243.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/followers_roc-eps-converted-to.pdf, id=42, 505.89pt x 505.89pt>
@@ -403,7 +403,7 @@ File: figs/followers_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/followers_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/followers_roc-eps-converted-to.pdf used on input 
-line 241.
+line 243.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/friends_roc.eps>
 (epstopdf)                    date: 2013-12-30 19:52:46
@@ -413,7 +413,7 @@ Package epstopdf Info: Source file: <figs/friends_roc.eps>
 (epstopdf)                    size: 11333 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/friends_roc-eps-conve
 rted-to.pdf figs/friends_roc.eps>
-(epstopdf)             \includegraphics on input line 244.
+(epstopdf)             \includegraphics on input line 246.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/friends_roc-eps-converted-to.pdf, id=43, 505.89pt x 505.89pt>
@@ -421,33 +421,33 @@ File: figs/friends_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/friends_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/friends_roc-eps-converted-to.pdf used on input li
-ne 244.
+ne 246.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/keyword_legend.eps>
-(epstopdf)                    date: 2013-12-31 20:52:17
+(epstopdf)                    date: 2014-01-04 16:08:22
 (epstopdf)                    size: 3670 bytes
 (epstopdf)             Output file: <figs/keyword_legend-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-31 21:26:54
+(epstopdf)                    date: 2014-01-04 16:12:36
 (epstopdf)                    size: 9475 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/keyword_legend-eps-co
 nverted-to.pdf figs/keyword_legend.eps>
-(epstopdf)             \includegraphics on input line 247.
+(epstopdf)             \includegraphics on input line 249.
 Package epstopdf Info: Output file is already uptodate.
 File: figs/keyword_legend-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/keyword_legend-eps-converted-to.pdf>
 Package pdftex.def Info: figs/keyword_legend-eps-converted-to.pdf used on input
- line 247.
+ line 249.
 (pdftex.def)             Requested size: 226.79846pt x 9.34082pt.
 Package epstopdf Info: Source file: <figs/meta_roc.eps>
-(epstopdf)                    date: 2013-12-31 20:59:39
-(epstopdf)                    size: 72165 bytes
+(epstopdf)                    date: 2014-01-04 16:12:07
+(epstopdf)                    size: 75225 bytes
 (epstopdf)             Output file: <figs/meta_roc-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-31 21:26:58
-(epstopdf)                    size: 11705 bytes
+(epstopdf)                    date: 2014-01-04 16:12:38
+(epstopdf)                    size: 11848 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meta_roc-eps-converte
 d-to.pdf figs/meta_roc.eps>
-(epstopdf)             \includegraphics on input line 262.
+(epstopdf)             \includegraphics on input line 264.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/meta_roc-eps-converted-to.pdf, id=44, 505.89pt x 505.89pt>
@@ -455,17 +455,17 @@ File: figs/meta_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/meta_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/meta_roc-eps-converted-to.pdf used on input line 
-262.
+264.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/meta_roc_final.eps>
-(epstopdf)                    date: 2013-12-31 20:59:39
+(epstopdf)                    date: 2014-01-04 16:12:07
 (epstopdf)                    size: 4356 bytes
 (epstopdf)             Output file: <figs/meta_roc_final-eps-converted-to.pdf>
-(epstopdf)                    date: 2013-12-31 21:26:59
+(epstopdf)                    date: 2014-01-04 16:12:39
 (epstopdf)                    size: 9179 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meta_roc_final-eps-co
 nverted-to.pdf figs/meta_roc_final.eps>
-(epstopdf)             \includegraphics on input line 265.
+(epstopdf)             \includegraphics on input line 267.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/meta_roc_final-eps-converted-to.pdf, id=45, 505.89pt x 505.89pt>
@@ -473,18 +473,19 @@ File: figs/meta_roc_final-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/meta_roc_final-eps-converted-to.pdf>
 Package pdftex.def Info: figs/meta_roc_final-eps-converted-to.pdf used on input
- line 265.
+ line 267.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
- (./Bodnar_www2014.bbl [3 <./figs/followers_roc-eps-converted-to.pdf> <./figs/f
-riends_roc-eps-converted-to.pdf> <./figs/meta_roc-eps-converted-to.pdf> <./figs
-/meta_roc_final-eps-converted-to.pdf>]) [4
+ [3 <./figs/followers_roc-eps-converted-to.pdf> <./figs/friends_roc-eps-convert
+ed-to.pdf> <./figs/meta_roc-eps-converted-to.pdf> <./figs/meta_roc_final-eps-co
+nverted-to.pdf>]
+(./Bodnar_www2014.bbl) [4
 
 ] (./Bodnar_www2014.aux) ) 
 Here is how much of TeX's memory you used:
- 3893 strings out of 493488
- 56103 string characters out of 3141326
- 119592 words of memory out of 3000000
- 7111 multiletter control sequences out of 15000+200000
+ 3894 strings out of 493488
+ 56120 string characters out of 3141326
+ 119600 words of memory out of 3000000
+ 7112 multiletter control sequences out of 15000+200000
  49468 words of font info for 67 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  41i,12n,38p,1224b,371s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -498,7 +499,7 @@ pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 sr/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/loca
 l/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texli
 ve/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on Bodnar_www2014.pdf (4 pages, 173473 bytes).
+Output written on Bodnar_www2014.pdf (4 pages, 175153 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  73 compressed objects within 1 object stream

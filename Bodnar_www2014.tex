@@ -157,6 +157,8 @@ In this section, we consider diagnosis based on classifying an individual tweet'
 
 First we go the route of defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significant effect in 6 of the keywords during months when the user had ILI. (See table \ref{tab:tweet_keyword_expert_results}). Additionally, we try algorithmically selecting keywords by first finding the 12,393 most common keywords in the data set.  We then rank them based off of information gain and choose the top 10, 100 or 1000 keywords from the list. In both of these cases, we preprocess the data by tokenizing the text on the characters ``.,;':"()?!'' - as well as spaces, tabs and line breaks - remove stop words\footnote{Stop words taken from Weka's stoplist version 3.7.10.}, perform Porter stemming \cite{Porter:1980dd,Willett:2006vb}  and convert the text to lower case. We then use the occurance or absence of these keywords as features for classification. We use naive bayes, random forest, J48, logistic regression and support vector machines to classify a user as being sick in a given month or not (see figure \ref{fig:roc_keyword}).
 
+
+
 \begin{figure} [h]
 \centering
 \begin{subfigure}[b]{.2\textwidth}
@@ -269,14 +271,28 @@ To this point, we have considered five approaches to detecting illness -- keywor
 \end{figure}
 
 
-\section{Conclusions}
+\section{Discussion}
 
- 
+ \begin{table}
+\centering
+\begin{tabular}{|c|c|c|} \hline
+Keyword&Ratio&p-value\ \\ \hline
+14 & 25 & Sick\\ \hline
+27 & 192 & Not Sick\\
+\hline\end{tabular}
+\caption{The thirty keyword stems with the highest positive predictive power. }
+\label{tab:thirty_best}
+\end{table}
 
 Comment on \(\sim\) 250 mill active T users \(\to\) 75 mill active US users, possibility of detecting \(\sim\) 10\% anual ILI rate, \(\sim\) half are detectable on twitter Twitter, so 12.5 mill cases as upper estimate.
 
 
 In this paper, we have shown that it is possible to diagnose an individual based off of her social media data with high accuracy. Computation approaches to aid in disease diagnosis has been approached before[], however they have been developed with a medical setting in mind. That is, the problem addressed was ``can we diagnose an individual based off data gathered from medical tests run on her?'' instead of ``can we diagnose an individual solely based off of publically available social media data?''  While we focus on the relativly benign case of remotely reconstructing a confidental diagnosis of influenza, these methods could also be applied to stigmatized diseases, such as HIV, where being able to determine if an individual is HIV positive without her knowledge and with only her Twitter handle could result in serious social or economic effects.
+
+While our system should be trusted more than one based simply off of aggregated tweets, it is more computationally intensive than simply pulling data from a keyword stream. These systems require the user to select a specific set of keywords before data collection can begin. Keywords representing symptoms such as ``flu'', ``cough'', ``sore throat'', and ``headache'' are often chosen[]. We suggest that the thirty\footnote{The Twitter API limits queries to thirty keywords.} keywords with the highest postivie predictive value (see table \ref{tab:thirty_best}) be chosen as the parameters for a keyword stream. In addition to keywords related to symptoms (e.g. ``flu'' or ``sick'') we also find keywords related to treatments (e.g. ``health'' or ``recovery'') and keywords related to negative mood (e.g. vulgarities) to be more commonly tweeted when a user is ill. 
+
+\section{Conclusions}
+
 
 %\begin{thebibliography}{1}
 %\bibitem{Ford:1956vc}
