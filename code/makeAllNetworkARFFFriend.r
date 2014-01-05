@@ -42,7 +42,7 @@ mydb = dbConnect(MySQL(), user='root',password='root',dbname='uhs_stalker', host
 
 sick_array = c()
 text_array = c()
-
+id_array = c()
 
 users = fetch(dbSendQuery(mydb, 'select * from users where `ignore`=0'),n=-1)
 
@@ -58,6 +58,7 @@ text = fetch(dbSendQuery(mydb, paste("SELECT GROUP_CONCAT( TEXT SEPARATOR  ' ' )
 
 if(length(text$c) > 0)
 {
+id_array = c(id_array, paste(user$userID,"_",month_iter, sep=""))
 sick_array=c(sick_array, sick_in_month(user, month_iter))
 text_array = c(text_array, replace_bad_char(text$c))
 }
@@ -68,4 +69,4 @@ text_array = c(text_array, replace_bad_char(text$c))
 
 
 #write.arff(data.frame(sick_array, text_array),"friends.arff")
-write.csv(data.frame(sick_array, text_array),"../data/private/friends.csv")
+write.csv(data.frame(id_array, sick_array, text_array),"../data/private/friends.csv")

@@ -3,13 +3,12 @@
 SELECT * 
 FROM (
 
-SELECT sick_month, GROUP_CONCAT( TEXT
+SELECT concat(userID, "_", month_index), sick_month, GROUP_CONCAT( TEXT
 SEPARATOR  ' ' ) AS c
 FROM tweets
 INNER JOIN users ON users.userID = tweets.user
 GROUP BY user, month_index
 ) AS a
-
 
 
 
