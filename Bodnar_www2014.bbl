@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Bodnar:2013we}
 T.~Bodnar and M.~Salath{\'e}.
@@ -9,6 +9,13 @@ T.~Bodnar and M.~Salath{\'e}.
 D.~Butler.
 \newblock {When Google got flu wrong}.
 \newblock {\em Nature}, 494(7436):155--156, Feb. 2013.
+
+\bibitem{Chan2010}
+E.~H. Chan, T.~F. Brewer, L.~C. Madoff, M.~P. Pollack, A.~L. Sonricker,
+  M.~Keller, C.~C. Freifeld, M.~Blench, A.~Mawudeku, and J.~S. Brownstein.
+\newblock Global capacity for emerging infectious disease detection.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  107(50):21701--21706, 2010.
 
 \bibitem{Culotta:2010hx}
 A.~Culotta.
@@ -28,10 +35,30 @@ F.~E. Grubbs.
 \newblock {Procedures for Detecting Outlying Observations in Samples}.
 \newblock {\em Technometrics}, 11(1):1--21, 1969.
 
+\bibitem{Heymann:2001}
+D.~L. Heymann and G.~R. Rodier.
+\newblock Hot spots in a wired world: \{WHO\} surveillance of emerging and
+  re-emerging infectious diseases.
+\newblock {\em The Lancet Infectious Diseases}, 1(5):345 -- 353, 2001.
+
 \bibitem{Lamb:2013to}
 A.~Lamb, M.~J. Paul, and M.~Dredze.
 \newblock {Separating Fact from Fear: Tracking Flu Infections on Twitter}.
 \newblock {\em cs.jhu.edu}, 2013.
+
+\bibitem{Marquet:2005tb}
+R.~L. Marquet, A.~Bartelds, S.~P. van Noort, and e.~al.
+\newblock {Internet-based monitoring of influenza-like illness (ILI) in the
+  general population of the Netherlands during the 2003--2004 influenza
+  season}.
+\newblock {\em BMC Public {\ldots}}, 2005.
+
+\bibitem{Olson:2013bo}
+D.~R. Olson, K.~J. Konty, M.~Paladini, C.~Viboud, and L.~Simonsen.
+\newblock {Reassessing Google Flu Trends Data for Detection of Seasonal and
+  Pandemic Influenza: A Comparative Epidemiological Study at Three Geographic
+  Scales}.
+\newblock {\em PLoS computational biology}, 9(10):e1003256, Oct. 2013.
 
 \bibitem{Porter:1980dd}
 M.~F. Porter.
@@ -39,11 +66,24 @@ M.~F. Porter.
 \newblock {\em Program: electronic library and information systems},
   14(3):130--137, 1980.
 
+\bibitem{Salathe:2012ez}
+M.~Salath{\'e}, L.~Bengtsson, T.~J. Bodnar, D.~D. Brewer, J.~S. Brownstein,
+  C.~Buckee, E.~M. Campbell, C.~Cattuto, S.~Khandelwal, P.~L. Mabry, and
+  A.~Vespignani.
+\newblock {Digital epidemiology.}
+\newblock {\em PLoS computational biology}, 8(7):e1002616, July 2012.
+
 \bibitem{Salathe:2011gr}
 M.~Salath{\'e} and S.~Khandelwal.
 \newblock {Assessing vaccination sentiments with online social media:
   implications for infectious disease dynamics and control.}
 \newblock {\em PLoS computational biology}, 7(10):e1002199, Oct. 2011.
+
+\bibitem{VanNoort:2007uk}
+S.~P. Van~Noort, M.~Muehlen, and A.~H. Rebelo.
+\newblock {Gripenet: an internet-based system to monitor influenza-like illness
+  uniformly across Europe.}
+\newblock {\em {\ldots} = European {\ldots}}, 2007.
 
 \bibitem{Willett:2006vb}
 P.~Willett.

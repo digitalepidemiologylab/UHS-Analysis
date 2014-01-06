@@ -27,7 +27,7 @@ lines(r$False.Positives/max(r$False.Positives),r$True.Positives/max(r$True.Posit
 legend(.6,.4, c("Human Classifier", "Anomaly Classifier", "Expert Keyword", "Mined Keyword","Network Classifier", "Baseline"), lty=c(1,1,1,1,1,2), col = c("Blue","Red","Orange","Green","Purple","Black" ), lwd=4)
 
 
-read.arff("../data/private/network/friends_100_naivebayes.arff") -> r
+read.arff("../data/private/network/followers_1000_naivebayes.arff") -> r
 make.names(names(r)) -> names(r)
 
 lines(r$False.Positives/max(r$False.Positives),r$True.Positives/max(r$True.Positives), type="l", col="purple", lwd=4, lty = 1)
