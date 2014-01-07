@@ -17,7 +17,7 @@ for ( id in 1:length(users$userID))
 res = fetch(dbSendQuery(mydb, paste('select count(*) as ct, month_index as month_index, sick_month from tweets where user=',users$userID[id],' group by month_index')))
 
 sub = res[which(is.na(res$sick_month) & res$ct > 9),]
-if(length(sub$ct) > 0){
+if(length(res$ct) > 0){
 meanVal = mean(sub$ct)
 stdVal = sd(sub$ct)
 
@@ -27,14 +27,22 @@ sick_times = c(sick_times,((counter$ct - meanVal) / stdVal))
 
 not_sick_times = c(not_sick_times,((sub$ct - meanVal) / stdVal))
 
-for( mindex in 1:length(sub$ct))
+for( mindex in 1:length(res$ct))
 {
-subsub = sub[mindex,]
+subsub = res[mindex,]
+
+if(subsub$ct > 9){
 z_score = c(z_score,(subsub$ct - meanVal) / stdVal)
-id_str = c(id_str, paste(users$userID[id],subsub$month_index,sep="_"))
+}
+else
+{
+z_score = c(z_score,0)
+}
 
-}}
+id_str = c(id_str, paste(users$userID[id],subsub$month_index[1],sep="_"))
 
+}
+}
 }
 
 write.csv(data.frame(id_str,z_score),"../data/private/model_predictions/anomaly.csv")
