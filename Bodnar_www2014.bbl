@@ -24,6 +24,11 @@ A.~Culotta.
 \newblock In {\em the First Workshop}, pages 115--122, New York, New York, USA,
   2010. ACM Press.
 
+\bibitem{Frossyniotis:2004wx}
+D.~Frossyniotis, K.~S. Nikita, and A.~Stafylopatis.
+\newblock {A meta-classifier approach for medical diagnosis}.
+\newblock {\em {\ldots} and Applications of {\ldots}}, 2004.
+
 \bibitem{Goel:2010jf}
 S.~Goel, J.~M. Hofman, S.~Lahaie, D.~M. Pennock, and D.~J. Watts.
 \newblock {Predicting consumer behavior with Web search.}
@@ -73,11 +78,10 @@ M.~Salath{\'e}, L.~Bengtsson, T.~J. Bodnar, D.~D. Brewer, J.~S. Brownstein,
 \newblock {Digital epidemiology.}
 \newblock {\em PLoS computational biology}, 8(7):e1002616, July 2012.
 
-\bibitem{Salathe:2011gr}
-M.~Salath{\'e} and S.~Khandelwal.
-\newblock {Assessing vaccination sentiments with online social media:
-  implications for infectious disease dynamics and control.}
-\newblock {\em PLoS computational biology}, 7(10):e1002199, Oct. 2011.
+\bibitem{Todorovski:2003hk}
+L.~Todorovski and S.~D{\v z}eroski.
+\newblock {Combining classifiers with meta decision trees}.
+\newblock {\em Machine Learning}, 50(3):223--249, 2003.
 
 \bibitem{VanNoort:2007uk}
 S.~P. Van~Noort, M.~Muehlen, and A.~H. Rebelo.

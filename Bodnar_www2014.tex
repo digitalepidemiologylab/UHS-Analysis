@@ -254,9 +254,10 @@ Preliminary idea. Cascade effects causing echoes on social network. Also conside
 
 \section{Meta Classifier}
 
-Combine features based off of previous signals, get something that's -- hopefully -- more accurate.
+So far we have considered five seperate methods for detecting illness based off of a user's Twitter activity. However, there is no reason that we cannot combine these methods to get a stronger signal. For example, while mining the user's text is the best of the five methods, she may stop tweeting while sick, which would be detected by the frequency-based anomaly classifier. Aggregating multiple classifiers by a `meta-classifier' has been shown to be an effective method for increasing classification accuracy. \cite{Frossyniotis:2004wx,Todorovski:2003hk}
 
-To this point, we have considered five approaches to detecting illness -- keyword detection, keyword mining, human classification, frequency-based anomaly detection and network based classifiers -- independently. Now we consider combining the results of the previous classifiers and develop a meta-classifier. (See figure \ref{fig:roc_meta}) Concretely, we begin by selecting the classifier from each approach that has the largest area under the ROC curve. Then we use....
+
+We begin by selecting the classifier from each of the previous five approaches that has the largest area under the ROC curve (see figure \ref{fig:roc_meta} A). We then use the predicted distributions from these classifiers as the feature vector for the meta classifier. We use AdaBoost, bayesian classification, J48 decision trees, logit boost, and weighted voting to evaluate the meta-dataset. We then evaluate these methods with leave-one-out cross validation and see an increase in ROC area over the best individual classifier (see figure \ref{fig:roc_meta} B).
 
 %adaboost, weighted voting, logistic, j48 decision trees, basian model, stacking, logit boost
 
