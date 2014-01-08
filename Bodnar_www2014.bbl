@@ -24,11 +24,6 @@ A.~Culotta.
 \newblock In {\em the First Workshop}, pages 115--122, New York, New York, USA,
   2010. ACM Press.
 
-\bibitem{Frossyniotis:2004wx}
-D.~Frossyniotis, K.~S. Nikita, and A.~Stafylopatis.
-\newblock {A meta-classifier approach for medical diagnosis}.
-\newblock {\em {\ldots} and Applications of {\ldots}}, 2004.
-
 \bibitem{Goel:2010jf}
 S.~Goel, J.~M. Hofman, S.~Lahaie, D.~M. Pennock, and D.~J. Watts.
 \newblock {Predicting consumer behavior with Web search.}
@@ -57,11 +52,11 @@ A.~Lamb, M.~J. Paul, and M.~Dredze.
 \newblock {\em cs.jhu.edu}, 2013.
 
 \bibitem{Marquet:2005tb}
-R.~L. Marquet, A.~Bartelds, S.~P. van Noort, and e.~al.
+R.~L. Marquet, A.~I. Bartelds, S.~P. van Noort, C.~E. Koppeschaar, J.~Paget,
+  F.~G. Schellevis, and J.~van~der Zee.
 \newblock {Internet-based monitoring of influenza-like illness (ILI) in the
-  general population of the Netherlands during the 2003--2004 influenza
-  season}.
-\newblock {\em BMC Public {\ldots}}, 2005.
+  general population of the Netherlands during the 2003-2004 influenza season}.
+\newblock {\em BMC public health}, 6(1):242, 2006.
 
 \bibitem{Olson:2013bo}
 D.~R. Olson, K.~J. Konty, M.~Paladini, C.~Viboud, and L.~Simonsen.
@@ -87,6 +82,13 @@ M.~Salath{\'e}, L.~Bengtsson, T.~J. Bodnar, D.~D. Brewer, J.~S. Brownstein,
 L.~Todorovski and S.~D{\v z}eroski.
 \newblock {Combining classifiers with meta decision trees}.
 \newblock {\em Machine Learning}, 50(3):223--249, 2003.
+
+\bibitem{Frossyniotis:2004wx}
+G.~Tsirogiannis, D.~Frossyniotis, K.~Nikita, and A.~Stafylopatis.
+\newblock A meta-classifier approach for medical diagnosis.
+\newblock In G.~Vouros and T.~Panayiotopoulos, editors, {\em Methods and
+  Applications of Artificial Intelligence}, volume 3025 of {\em Lecture Notes
+  in Computer Science}, pages 154--163. Springer Berlin Heidelberg, 2004.
 
 \bibitem{VanNoort:2007uk}
 S.~P. Van~Noort, M.~Muehlen, and A.~H. Rebelo.
