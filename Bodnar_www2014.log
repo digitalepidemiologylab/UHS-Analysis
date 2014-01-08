@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  8 JAN 2014 03:17
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  8 JAN 2014 03:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -493,20 +493,23 @@ Package pdftex.def Info: figs/meta_roc_final-eps-converted-to.pdf used on input
 to.pdf> <./figs/keyword_legend-eps-converted-to.pdf> <./figs/followers_roc-eps-
 converted-to.pdf> <./figs/friends_roc-eps-converted-to.pdf>] (./Bodnar_www2014.
 bbl)
-Overfull \hbox (6.91055pt too wide) in paragraph at lines 396--397
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./figs/meta_roc-eps-converted-to.pdf> <./figs/meta_roc_final-eps-converted
+-to.pdf>]
+Overfull \hbox (6.91055pt too wide) in paragraph at lines 398--399
 \T1/aer/m/n/9 neg-a-tive mood (e.g. vul-gar-i-ties) to be more com-monly tweete
 d
  []
 
-[4 <./figs/meta_roc-eps-converted-to.pdf> <./figs/meta_roc_final-eps-converted-
-to.pdf>] [5
+[5
 
 ] (./Bodnar_www2014.aux) ) 
 Here is how much of TeX's memory you used:
- 3910 strings out of 493488
- 56474 string characters out of 3141326
- 124652 words of memory out of 3000000
- 7127 multiletter control sequences out of 15000+200000
+ 3911 strings out of 493488
+ 56487 string characters out of 3141326
+ 121656 words of memory out of 3000000
+ 7128 multiletter control sequences out of 15000+200000
  49468 words of font info for 67 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  41i,12n,38p,1341b,371s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -520,7 +523,7 @@ pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb
 sr/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/loca
 l/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texli
 ve/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on Bodnar_www2014.pdf (5 pages, 190403 bytes).
+Output written on Bodnar_www2014.pdf (5 pages, 191996 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream

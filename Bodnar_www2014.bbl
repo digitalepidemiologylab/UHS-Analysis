@@ -40,6 +40,11 @@ F.~E. Grubbs.
 \newblock {Procedures for Detecting Outlying Observations in Samples}.
 \newblock {\em Technometrics}, 11(1):1--21, 1969.
 
+\bibitem{Hall:2009ud}
+M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemann, and I.~H. Witten.
+\newblock {The WEKA data mining software}.
+\newblock {\em ACM SIGKDD Explorations Newsletter}, 11(1):10, Nov. 2009.
+
 \bibitem{Heymann:2001}
 D.~L. Heymann and G.~R. Rodier.
 \newblock Hot spots in a wired world: \{WHO\} surveillance of emerging and
