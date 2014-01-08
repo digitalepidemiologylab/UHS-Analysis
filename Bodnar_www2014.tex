@@ -350,8 +350,14 @@ Marcel Salath\'e received funding through a Branco Weiss fellowship. We thank th
 %\balancecolumns
 
 \appendix
-\ 
 
+
+\section{Keyword Recommendations}
+
+
+While our system should be trusted more than one based simply off of aggregated tweets, it is more computationally intensive than simply pulling data from a keyword stream. These systems require the user to select a specific set of keywords before data collection can begin. Keywords representing symptoms such as ``flu'', ``cough'', ``sore throat'', and \balancecolumns ``headache'' are often chosen. We suggest that  the thirty\footnote{The Twitter API limits queries to thirty keywords.} keywords  with the highest positive predictive value (see table \ref{tab:thirty_best}) be chosen as the parameters for a keyword stream. In addition to keywords related to symptoms (e.g. ``flu'' or ``sick'')  we also find keywords related to treatments (e.g. ``health,'' ``prayer'' or ``recovery'') and keywords related to negative mood (e.g. vulgarities) to be more commonly tweeted when a user is ill. 
+ 
+\thinspace
 
 \begin{table}[!ht]
 \centering
@@ -395,11 +401,6 @@ riot & 26.765 \\
 \caption{The thirty keyword stems with the highest positive predictive power ranked by significance. Ratio is calculated as the rate of occurrence when a user is sick over the rate when a user is not sick.}
 \label{tab:thirty_best}
 \end{table}
-
-\section{Keyword Recommendations}
-
-
-While our system should be trusted more than one based simply off of aggregated tweets, it is more computationally intensive than simply pulling data from a keyword stream. These systems require the user to select a specific set of keywords before data collection can begin. Keywords representing symptoms such as ``flu'', ``cough'', ``sore throat'', and ``headache'' are often chosen. We suggest that the thirty\footnote{The Twitter API limits queries to thirty keywords.} keywords with the highest positive predictive value (see table \ref{tab:thirty_best}) be chosen as the parameters for a keyword stream. In addition to keywords related to symptoms (e.g. ``flu'' or ``sick'') we also find keywords related to treatments (e.g. ``health,'' ``prayer'' or ``recovery'') and keywords related to negative mood (e.g. vulgarities) to be more commonly tweeted when a user is ill. 
 
 
 \balancecolumns
