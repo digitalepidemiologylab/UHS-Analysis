@@ -143,8 +143,10 @@ Most work to this point considers finding messages in tweets (i.e. ``I'm sick'')
 
 \section{Data Collection}
 \subsection{Medical Records}
+We recieved information about 104 individuals from the Pennsylvania State University's Health Services that were professionally diagnosed with Influenza by a medical professional during the 2012-2013 Influenza season (see figure \ref{fig:flu_rate}).  Additionally we collect information from 125 individuals that were NOT diagnosed as a control set. The participants were mostly students (\(72\%\) were between the ages of 18 and 22) and slightly female (\(133 / 226 \approx 58.8\%\).) Data collection was approved through the Pennsylvania State University's IRB (\#12345.) Additionally we recieved the Twitter handles from 119 of these individuals.
+
 \subsection{Twitter Records}
-We received a total of 119 user accounts for Twitter from the survey; 15 of which were discarded because the associated accounts were either non-existent, banned, or private. For each of the remaining 104 accounts, we pulled their profile information, their friends and followers information, their most recent 3000 tweets, and their friends profiles and tweets. Some users did not tweet during the month that they were sick; we kept those accounts as part of the control group. We were limited to the most recent 3000 tweets by Twitter's time line query, but this only effected two accounts -- both of which posted multiple times per hour and were thrown out because we could only look back a few days.
+While we received a total of 119 Twitter accounts, 15 were discarded because the associated accounts were either non-existent, banned, or private. For each of the remaining 104 accounts, we pulled their profile information, their friends and followers information, their most recent 3000 tweets, and their friends profiles and tweets. Some users did not tweet during the month that they were sick; we kept those accounts as part of the control group. We were limited to the most recent 3000 tweets by Twitter's time line query, but this only effected two accounts -- both of which posted multiple times per hour and were thrown out because we could only look back a few days.
 
 We collected data by calling the Twitter API on the user account that we queried the longest time ago. Tweets, profile and follower information queries have separate rate limits and were collected in parallel. The 104 seed accounts collected above were given higher priority over their friends and followers. In total, we collected 37,599 tweets from the seed accounts and 30,950,958 tweets from 913,082 accounts that they either followed or were followed by.
 
@@ -152,6 +154,7 @@ We collected data by calling the Twitter API on the user account that we queried
 
 %\section{Signal Detection}
 \section{Text Based Signals}
+\label{sec:text_analysis}
 
 In this section, we consider diagnosis based on classifying an individual tweet's content as either about ILI or not. We begin by dividing the tweets into two sets: tweets that were posted the same month that a user was sick, and tweets that were posted other times. We find a total of 1609 tweets from 35 users in the first category.
 
@@ -176,7 +179,7 @@ First we go the route of defining a set of keywords that are positive signals of
 
 
 
-Additionally, we hand rate all 1609 tweets, that were posted by individuals during the time of their illness,  for information regarding the user's health. Additionally we sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find 58 tweets from 17 (\(17/35 = 48.57\%\))  individuals in our study that are about the user being sick. We also find zero tweets about ILI during times when they did \textit{not} have ILI. While the use of a ``human'' classifier clearly does not scale, it allows for an approxamatly 100.0\% accurate classification. Since regular machine learning algorithms preform much worse than 100.0\% accuracy, the human classifier gives us an upper limit to the accuracy of  a health monitoring system based off of tweet classification . (See table \ref{tab:tweet_classified_confusion})
+Additionally, we hand rate all 1609 tweets, that were posted by individuals during the time of their illness,  for information regarding the user's health.  We also sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find 58 tweets from 17 (\(17/35 = 48.57\%\))  individuals in our study that are about the user being sick. We also find zero tweets about ILI during times when they did \textit{not} have ILI. While the use of a ``human'' classifier clearly does not scale, it allows for an approxamatly 100.0\% accurate classification. Since regular machine learning algorithms preform much worse than 100.0\% accuracy, the human classifier gives us an upper limit to the accuracy of  a health monitoring system based off of tweet classification . (See table \ref{tab:tweet_classified_confusion})
 
 %\include{tables/keyword_expert_odds.tex}
 
@@ -204,13 +207,13 @@ Sick&Not Sick&\ \\ \hline
 
 \section{Frequency Based Signals}
 
-We perform one-dimensional anomaly detection on each user's monthly tweeting rate as follows. First, we calculate the number of tweets in each month in the study period and discard any months where the user tweets less than ten times. This avoids issues caused by the user starting or stopping to use Twitter. We then calculate the z-score of the tweeting rate of the month that the user is ill by
+It is likely that a user tweets at a different rate when she is ill than she normally does. To detect this, we perform one-dimensional anomaly detection on each user's monthly tweeting rate as follows. First, we calculate the number of tweets in each month in the study period and discard any months where the user tweets less than ten times. This avoids issues caused by the user starting or stopping to use Twitter. We then calculate the z-score of the tweeting rate of the month that the user is ill by
 
 \begin{equation}
 z = \frac{|x - \bar{x}|}{\hat{s}}
 \end{equation}
 
-Where \(\bar{x}\) and \(\hat{s}\) are the estimated mean and standard deviation of the user's tweeting rate. \cite{Grubs:1969ab} We repeat this process for months when the user is not sick. We then decide that the user is sick if \(z > 1.411\) where \(1.411\) was chosen through leave one out cross validation. We find a significant difference between the z-scores for months when a user was had ILI and months when the user did not (\(p = 0.01303\), two-sample Kolmogorov-Smirnov test). Most of the time individuals are not sick (219 / 258 = 84.88\%), resulting in a highly biased sample. Thus we optimize based on the \(F_1\) score. The optimal z-score cutoff results in \(F_1= 35.0\%\). (See table \ref{tab:tweet_anomaly_confusion}.) 
+Where \(\bar{x}\) and \(\hat{s}\) are the estimated mean and standard deviation of the user's tweeting rate. \cite{Grubs:1969ab} We repeat this process for months when the user is not sick. We then decide that the user is sick if \(z > 1.411\) where \(1.411\) was chosen through leave one out cross validation. We find a significant difference between the z-scores for months when a user was had ILI and months when the user did not (\(p = 0.01303\), two-sample Kolmogorov-Smirnov test). Most of the time individuals are not sick (219 / 258 = 84.88\%), resulting in a highly biased sample. Thus we optimize based on the \(F_1\) score instead of accuracy. The optimal z-score cutoff results in \(F_1= 35.0\%\). (See table \ref{tab:tweet_anomaly_confusion}.) 
 
 %\begin{figure} %need to redo
 %\centering
@@ -232,7 +235,7 @@ Sick&Not Sick&\ \\ \hline
 
 \section{Network Based Signals}
 
-Preliminary idea. Cascade effects causing echoes on social network. Also consider friends becoming ill around same time. Check @ tag
+Even if a user is not currently active at all on Twitter, her friends or followers may give clues to her health status. We consider all text that a user's friends or followers tweeted and perform simular keyword analysis as was applied to the user's tweets in section \ref{sec:text_analysis}. Because the number and activity of friends or followers greatly varies regardless of a user's health status, we normalize the counts here by the total number of characters her friends or followers tweeted. We find that most of the tested classifiers are able to detect a signal in both the user's followers' and friends' streams. (See figure \ref{fig:roc_network}.)
 
 %follower 12393
 %friend 11595
@@ -257,7 +260,7 @@ Preliminary idea. Cascade effects causing echoes on social network. Also conside
 So far we have considered five seperate methods for detecting illness based off of a user's Twitter activity. However, there is no reason that we cannot combine these methods to get a stronger signal. For example, while mining the user's text is the best of the five methods, she may stop tweeting while sick, which would be detected by the frequency-based anomaly classifier. Aggregating multiple classifiers by a `meta-classifier' has been shown to be an effective method for increasing classification accuracy. \cite{Frossyniotis:2004wx,Todorovski:2003hk}
 
 
-We begin by selecting the classifier from each of the previous five approaches that has the largest area under the ROC curve (see figure \ref{fig:roc_meta} A). We then use the predicted distributions from these classifiers as the feature vector for the meta classifier. We use AdaBoost, bayesian classification, J48 decision trees, logit boost, and weighted voting to evaluate the meta-dataset. We then evaluate these methods with leave-one-out cross validation and see an increase in ROC area over the best individual classifier (see figure \ref{fig:roc_meta} B).
+We begin by selecting the classifier from each of the previous five approaches that has the largest area under the ROC curve (see figure \ref{fig:roc_meta} A). We then use the predicted distributions from these classifiers as the feature vector for the meta classifier. We use AdaBoost, bayesian classification, J48 decision trees, logit boost, and weighted voting to evaluate the meta-dataset. We then evaluate these methods with leave-one-out cross validation and see an increase in ROC area (and accuracy) over the best individual classifier (see figure \ref{fig:roc_meta} B).
 
 %adaboost, weighted voting, logistic, j48 decision trees, basian model, stacking, logit boost
 
@@ -320,7 +323,7 @@ Comment on \(\sim\) 250 mill active T users \(\to\) 75 mill active US users, pos
 
 In this paper, we have shown that it is possible to diagnose an individual based off of her social media data with high accuracy. Computational approaches to aid in disease diagnosis has been approached before[], however they have been developed with a medical setting in mind. That is, the problem addressed was ``can we diagnose an individual based off data gathered from medical tests run on her?'' instead of ``can we diagnose an individual solely based off of publically available social media data?''  While we focus on the relativly benign case of remotely reconstructing a confidental diagnosis of influenza, these methods could also be applied to stigmatized diseases, such as HIV, where being able to determine if an individual is HIV positive without her knowledge and with only her Twitter handle could result in serious social or economic effects.
 
-While our system should be trusted more than one based simply off of aggregated tweets, it is more computationally intensive than simply pulling data from a keyword stream. These systems require the user to select a specific set of keywords before data collection can begin. Keywords representing symptoms such as ``flu'', ``cough'', ``sore throat'', and ``headache'' are often chosen[]. We suggest that the thirty\footnote{The Twitter API limits queries to thirty keywords.} keywords with the highest postivie predictive value (see table \ref{tab:thirty_best}) be chosen as the parameters for a keyword stream. In addition to keywords related to symptoms (e.g. ``flu'' or ``sick'') we also find keywords related to treatments (e.g. ``health'' or ``recovery'') and keywords related to negative mood (e.g. vulgarities) to be more commonly tweeted when a user is ill. 
+While our system should be trusted more than one based simply off of aggregated tweets, it is more computationally intensive than simply pulling data from a keyword stream. These systems require the user to select a specific set of keywords before data collection can begin. Keywords representing symptoms such as ``flu'', ``cough'', ``sore throat'', and ``headache'' are often chosen[]. We suggest that the thirty\footnote{The Twitter API limits queries to thirty keywords.} keywords with the highest postivie predictive value (see table \ref{tab:thirty_best}) be chosen as the parameters for a keyword stream. In addition to keywords related to symptoms (e.g. ``flu'' or ``sick'') we also find keywords related to treatments (e.g. ``health,'' ``prayer'' or ``recovery'') and keywords related to negative mood (e.g. vulgarities) to be more commonly tweeted when a user is ill. 
 
 \section{Conclusions}
 
