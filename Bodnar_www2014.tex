@@ -91,7 +91,7 @@ Vicki Barclay\\
 \and 
 \alignauthor
 Conrad S Tucker\\
-\affaddr{Pennsylvania State Univeristy}
+\affaddr{Pennsylvania State University}
 \affaddr{Department of Engineering \\Design and Industrial and \\Manufacturing Engineering}
 \email{conrad.tucker@psu.edu}
 \alignauthor
@@ -104,7 +104,7 @@ Marcel Salath\'e\\
 
 \maketitle
 \begin{abstract}
-Social media has been considered as a datasource for tracking disease. However, most of the analysis has been on the population level. Here we develop a novel system of influenza diagnosis based on publicly available Twitter data. We train our system on cases where the Twitter user has been officially diagnosed by medical professionals. We find that about half (\(17/35 = 48.57\%\)) of the users in our sample that were sick explicitly discuss their disease on Twitter. By developing a meta classifier based off of text analysis, anomaly detection, and social network analysis, we are able to diagnose an individual with greater than 99\% accuracy.
+Social media has been considered as a data source for tracking disease. However, most of the analysis has been on the population level. Here we develop a novel system of influenza diagnosis based on publicly available Twitter data. We train our system on cases where the Twitter user has been officially diagnosed by medical professionals. We find that about half (\(17/35 = 48.57\%\)) of the users in our sample that were sick explicitly discuss their disease on Twitter. By developing a meta classifier based off of text analysis, anomaly detection, and social network analysis, we are able to diagnose an individual with greater than 99\% accuracy.
 \end{abstract}
 
 % A category with the (minimum) three required fields
@@ -120,11 +120,11 @@ Social media has been considered as a datasource for tracking disease. However, 
 \section{Introduction}
 %Digital epidemiology, datamining Internet records to approach epidemological questions in novel ways, has recently been proposed as an alternative to traditional disease surveillance methods[]. 
 
-Disease surveillance systems -- traditionally relying on reports from medical practitioners -- are an important part of disease control. However, these traditional surveillance systems are often costly and slow to respond\cite{Heymann:2001,Chan2010,Salathe:2012ez}.  The widespread adoption of the Internet by the general public has provided opertunities for the development of novel disease surveillance methods. Compared to traditional systems, where data is provided by medical diagnosis, these new systems provide either semi-automatic -- through long term self reporting systems\cite{Marquet:2005tb,VanNoort:2007uk} -- or fully automatic -- through datamining search queries or social media -- disease surveillance. While these methods are cheaper, faster and cover a larger number of individuals than traditional systems, one can be less confident about their results than the results from a system based on professional diagnosis. In this paper, we develop a system that performs long term surveillance on Twitter users with methods trained on professionally diagnosed data that combines the advantages of all three of these previous systems.
+Disease surveillance systems -- traditionally relying on reports from medical practitioners -- are an important part of disease control. However, these traditional surveillance systems are often costly and slow to respond\cite{Heymann:2001,Chan2010,Salathe:2012ez}.  The widespread adoption of the Internet by the general public has provided opportunities for the development of novel disease surveillance methods. Compared to traditional systems, where data is provided by medical diagnosis, these new systems provide either semi-automatic -- through long term self reporting systems\cite{Marquet:2005tb,VanNoort:2007uk} -- or fully automatic -- through data mining search queries or social media -- disease surveillance. While these methods are cheaper, faster and cover a larger number of individuals than traditional systems, one can be less confident about their results than the results from a system based on professional diagnosis. In this paper, we develop a system that performs long term surveillance on Twitter users with methods trained on professionally diagnosed data that combines the advantages of all three of these previous systems.
 
-Previous work with datamining social media has focused on methods to replicate the patterns found in traditional surveilance networks\cite{Bodnar:2013we,Culotta:2010hx,Goel:2010jf}. However, these methods have several limitations. First, they generally do not differentiate between an individual with an illness and an individual that is worried about an illness; which may have resulted in a predicted influenza rate that was much higher then the actual 2013 influenza rate \cite{Bodnar:2013we,Butler:2013uh,Olson:2013bo,Lamb:2013to}. Second, these methods cannot be extended to areas without a previous surveillance network. Finally, these methods are fundamentially incapapble of detecting diseases that do not show strong spatio-temporal patters such as mental illness, obesity or Parkinson's disease[]. Instead of top-down methods to measure levels of disease in a population, we approach this problem from the bottom-up. This addresses all three of these issues: we only diagnose individuals that are likely to have the disease, and not just interested in the disease; we do not require previous data when applying these methods to new problems or locations; and these methods can easily generalize to diseases that do not show strong patters because we focus on an individual by individual level.
+Previous work with data mining social media has focused on methods to replicate the patterns found in traditional surveillance networks\cite{Bodnar:2013we,Culotta:2010hx,Goel:2010jf}. However, these methods have several limitations. First, they generally do not differentiate between an individual with an illness and an individual that is worried about an illness; which may have resulted in a predicted influenza rate that was much higher then the actual 2013 influenza rate \cite{Bodnar:2013we,Butler:2013uh,Olson:2013bo,Lamb:2013to}. Second, these methods cannot be extended to areas without a previous surveillance network. Finally, these methods are fundamentally incapable of detecting diseases that do not show strong spatial-temporal patterns such as mental illness, obesity or Parkinson's disease[]. Instead of top-down methods to measure levels of disease in a population, we approach this problem from the bottom-up. This addresses all three of these issues: we only diagnose individuals that are likely to have the disease, and not just interested in the disease; we do not require previous data when applying these methods to new problems or locations; and these methods can easily generalize to diseases that do not show strong patters because we focus on an individual by individual level.
 
-Systems, such as Influenzanet or Flu Near You, use self-reported symptoms to diagnose an individual also work from a bottom-up approach.\cite{Marquet:2005tb,VanNoort:2007uk} These systems have the potential to be better than traditional surveillance systems because they update in near-real-time and can detect cases even when the user has not gone to their doctor. These systems require the user to sign up which allows for long term studies which are not normally able to be done with Tweets or search queries. However this reduces the number of users studied compared to datamining approaches. For example, Flu Near You had a total of 9,456 users report during the week ending 29 December 2013. Marquet et al. \cite{Marquet:2005tb} has shown a large drop out rate with only 53\% users participating for five or more weeks. While this amount of data is sufficient for many purposes, a system which is based on Twitter's millions of active users would open the door to novel questions.
+Systems, such as InfluenzaNet or Flu Near You, use self-reported symptoms to diagnose an individual also work from a bottom-up approach.\cite{Marquet:2005tb,VanNoort:2007uk} These systems have the potential to be better than traditional surveillance systems because they update in near-real-time and can detect cases even when the user has not gone to their doctor. These systems require the user to sign up which allows for long term studies which are not normally able to be done with Tweets or search queries. However this reduces the number of users studied compared to data mining approaches. For example, Flu Near You had a total of 9,456 users report during the week ending 29 December 2013. Marquet et al. \cite{Marquet:2005tb} has shown a large drop out rate with only 53\% users participating for five or more weeks. While this amount of data is sufficient for many purposes, a system which is based on Twitter's millions of active users would open the door to novel questions.
 
 
 %Digital epidemiology \(\to\) novel disease detection mechanisms.
@@ -146,8 +146,8 @@ We develop this such a system as follows. In section 2 we describe the collectio
 %Tweet classification \cite{Culotta:2010hx,Lamb:2013to,Salathe:2011gr}
 
 \section{Data Collection}
-\subsection{Medical records}
-We recieved information about 104 individuals from the Pennsylvania State University's Health Services that were professionally diagnosed with Influenza by a medical professional during the 2012-2013 Influenza season (see figure \ref{fig:flu_rate}).  Additionally we collect information from 122 individuals that were \emph{not} diagnosed as a control set. The participants were mostly students (\(72\%\) were between the ages of 18 and 22) and slightly female (\(133 / 226 \approx 58.8\%\).) Data collection was approved through the Pennsylvania State University's IRB (\#41345.) Additionally we recieved the Twitter handles from 119 of these individuals.
+\subsection{Medical Records}
+We received information about 104 individuals from the Pennsylvania State University's Health Services that were professionally diagnosed with Influenza by a medical professional during the 2012-2013 Influenza season (see figure \ref{fig:flu_rate}).  Additionally we collect information from 122 individuals that were \emph{not} diagnosed as a control set. The participants were mostly students (\(72\%\) were between the ages of 18 and 22) and slightly female (\(133 / 226 \approx 58.8\%\).) Data collection was approved through the Pennsylvania State University's IRB (\#41345.) Additionally we recieved the Twitter handles from 119 of these individuals.
 
 \begin{figure} [h]
 \centering
@@ -156,7 +156,7 @@ We recieved information about 104 individuals from the Pennsylvania State Univer
 \label{fig:flu_rate}
 \end{figure}
 
-\subsection{Twitter records}
+\subsection{Twitter Records}
 While we received a total of 119 Twitter accounts, 15 were discarded because the associated accounts were either non-existent, banned, or private. For each of the remaining 104 accounts, we pulled their profile information, their friends and followers information, their most recent 3000 tweets, and their friends profiles and tweets. Some users did not tweet during the month that they were sick; we kept those accounts as part of the control group. We were limited to the most recent 3000 tweets by Twitter's time line query, but this only effected two accounts -- both of which posted multiple times per hour and were thrown out because we could only look back a few days.
 
 We collected data by calling the Twitter API on the user account that we queried the longest time ago. Tweets, profile and follower information queries have separate rate limits and were collected in parallel. The 104 seed accounts collected above were given higher priority over their friends and followers. In total, we collected 37,599 tweets from the seed accounts and 30,950,958 tweets from 913,082 accounts that they either followed or were followed by.
@@ -169,7 +169,7 @@ We collected data by calling the Twitter API on the user account that we queried
 
 In this section, we consider diagnosis based on classifying an individual tweet's content as either about ILI or not. We begin by dividing the tweets into two sets: tweets that were posted the same month that a user was sick, and tweets that were posted other times. We find a total of 1609 tweets from 35 users in the first category.
 
-First we go the route of defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significant effect in 6 of the keywords during months when the user had ILI. (See table \ref{tab:tweet_keyword_expert_results}). Additionally, we try algorithmically selecting keywords by first finding the 12,393 most common keywords in the data set.  We then rank them based off of information gain and choose the top 10, 100 or 1000 keywords from the list. In both of these cases, we preprocess the data by tokenizing the text on the characters ``.,;':"()?!'' - as well as spaces, tabs and line breaks - remove stop words\footnote{Stop words taken from Weka's stoplist version 3.7.10.}, perform Porter stemming \cite{Porter:1980dd,Willett:2006vb}  and convert the text to lower case. We then use the occurance or absence of these keywords as features for classification. We use naive bayes, random forest, J48, logistic regression and support vector machines to classify a user as being sick in a given month or not (see figure \ref{fig:roc_keyword}).
+First we go the route of defining a set of keywords that are positive signals of influenza. We chose \{flu, influenza, sick, cough, cold, medicine, fever\} as our set of keywords. Of these seven keywords, we find a significant effect in 6 of the keywords during months when the user had ILI. (See table \ref{tab:tweet_keyword_expert_results}). Additionally, we try algorithmically selecting keywords by first finding the 12,393 most common keywords in the data set.  We then rank them based off of information gain and choose the top 10, 100 or 1000 keywords from the list. In both of these cases, we pre-process the data by tokenizing the text on the characters ``.,;':"()?!'' - as well as spaces, tabs and line breaks - remove stop words\footnote{Stop words taken from Weka's stop list version 3.7.10.}, perform Porter stemming \cite{Porter:1980dd,Willett:2006vb}  and convert the text to lower case. We then use the occurrence or absence of these keywords as features for classification. We use Naive Bayes, random forest, J48, logistic regression and support vector machines to classify a user as being sick in a given month or not (see figure \ref{fig:roc_keyword}).
 
 
 
@@ -189,7 +189,7 @@ First we go the route of defining a set of keywords that are positive signals of
 \end{figure}
 
 
-Additionally, we hand rate all 1609 tweets, that were posted by individuals during the time of their illness,  for information regarding the user's health.  We also sample a randomly selected set of 1609 tweets from times when the users did not have ILI as a control. We find 58 tweets from 17 (\(17/35 = 48.57\%\))  individuals in our study that are about the user being sick. We also find zero tweets about ILI during times when they did \textit{not} have ILI. While the use of a ``human'' classifier clearly does not scale, it allows for an approxamatly 100.0\% accurate classification. Since regular machine learning algorithms preform much worse than 100.0\% accuracy, the human classifier gives us an upper limit to the accuracy of  a health monitoring system based off of tweet classification . (See table \ref{tab:tweet_classified_confusion})
+Additionally, we hand rate all 1609 tweets, that were posted by individuals during the time of their illness,  for information regarding the user's health.  We also sample a randomly selected set of 1609 tweets from times when the users did not have influenza as a control. We find 58 tweets from 17 (\(17/35 = 48.57\%\))  individuals in our study that are about the user being sick. We also find zero tweets about ILI during times when they did \textit{not} have influenza. While the use of a ``human'' classifier clearly does not scale, it allows for an approximately 100.0\% accurate classification. Since regular machine learning algorithms preform much worse than 100.0\% accuracy, the human classifier gives us an upper limit to the accuracy of  a health monitoring system based off of tweet classification . (See table \ref{tab:tweet_classified_confusion})
 
 
 %\include{tables/keyword_expert_odds.tex}
@@ -246,7 +246,7 @@ Sick&Not Sick&\ \\ \hline
 
 \section{Network Based Signals}
 
-Even if a user is not currently active at all on Twitter, her friends or followers may give clues to her health status. We consider all text that a user's friends or followers tweeted and perform simular keyword analysis as was applied to the user's tweets in section \ref{sec:text_analysis}. Because the number and activity of friends or followers greatly varies regardless of a user's health status, we normalize the counts here by the total number of characters her friends or followers tweeted. We find that most of the tested classifiers are able to detect a signal in both the user's followers' and friends' streams. (See figure \ref{fig:roc_network}.)
+Even if a user is not currently active at all on Twitter, her friends or followers may give clues to her health status. We consider all text that a user's friends or followers tweeted and perform similar keyword analysis as was applied to the user's tweets in section \ref{sec:text_analysis}. Because the number and activity of friends or followers greatly varies regardless of a user's health status, we normalize the counts here by the total number of characters her friends or followers tweeted. We find that most of the tested classifiers are able to detect a signal in both the user's followers' and friends' streams. (See figure \ref{fig:roc_network}.)
 
 %follower 12393
 %friend 11595
@@ -268,7 +268,7 @@ Even if a user is not currently active at all on Twitter, her friends or followe
 
 \section{Meta Classifier}
 
-So far we have considered five seperate methods for detecting illness based off of a user's Twitter activity. However, there is no reason that we cannot combine these methods to get a stronger signal. For example, while mining the user's text is the best of the five methods, she may stop tweeting while sick, which would be detected by the frequency-based anomaly classifier. Aggregating multiple classifiers by a `meta-classifier' has been shown to be an effective method for increasing classification accuracy. \cite{Frossyniotis:2004wx,Todorovski:2003hk}
+So far we have considered five separate methods for detecting illness based off of a user's Twitter activity. However, there is no reason that we cannot combine these methods to get a stronger signal. For example, while mining the user's text is the best of the five methods, she may stop tweeting while sick, which would be detected by the frequency-based anomaly classifier. Aggregating multiple classifiers by a `meta-classifier' has been shown to be an effective method for increasing classification accuracy. \cite{Frossyniotis:2004wx,Todorovski:2003hk}
 
 \begin{table}
 \centering
@@ -285,7 +285,7 @@ Baseline & .8544 & 89.72\\
 \label{tab:meta_results}
 \end{table}
 
-We start by selecting the classifier from each of the previous five approaches that has the largest area under the ROC curve (see figure \ref{fig:roc_meta} A). We then use the predicted distributions from these classifiers as the feature vector for the meta classifier. We use AdaBoost, bayesian classification, J48 decision trees, logit boost, and weighted voting to evaluate the meta-dataset. We then evaluate these methods with leave-one-out cross validation and see an increase in ROC area (and accuracy) over the best individual classifier (see figure \ref{fig:roc_meta} B).
+We start by selecting the classifier from each of the previous five approaches that has the largest area under the ROC curve (see figure \ref{fig:roc_meta} A). We then use the predicted distributions from these classifiers as the feature vector for the meta classifier. We use Ada Boost, Bayesian classification, J48 decision trees, logit boost, and weighted voting to evaluate the meta-dataset. We then evaluate these methods with leave-one-out cross validation and see an increase in ROC area (and accuracy) over the best individual classifier (see figure \ref{fig:roc_meta} B).
 
 %adaboost, weighted voting, logistic, j48 decision trees, basian model, stacking, logit boost
 
@@ -305,13 +305,13 @@ We start by selecting the classifier from each of the previous five approaches t
 \section{Conclusions}
 
 
-In this paper, we have shown that it is possible to diagnose an individual based off of her social media data with high accuracy. Computational approaches to aid in disease diagnosis has been approached before, however they have been developed with a medical setting in mind. That is, the problem addressed was ``can we diagnose an individual based off data gathered from medical tests run on her?'' instead of ``can we diagnose an individual solely based off of publically available social media data?''  While we focus on the relativly benign case of remotely reconstructing a confidental diagnosis of Influenza, these methods could also be applied to stigmatized diseases, such as HIV, where being able to determine if an individual is HIV positive without her knowledge and with only her Twitter handle could result in serious social or economic effects. Half of the users explicitly stated that they were sick, and we were able to confidently determine illness in the other half of the cases through their data. It would seem that avoiding discussing a illness is not enough to hide one's health in the age of big data. 
+In this paper, we have shown that it is possible to diagnose an individual based off of her social media data with high accuracy. Computational approaches to aid in disease diagnosis has been approached before, however they have been developed with a medical setting in mind. That is, the problem addressed was ``can we diagnose an individual based off data gathered from medical tests run on her?'' instead of ``can we diagnose an individual solely based off of publicly available social media data?''  While we focus on the relatively benign case of remotely reconstructing a confidential diagnosis of Influenza, these methods could also be applied to stigmatized diseases, such as HIV, where being able to determine if an individual is HIV positive without her knowledge and with only her Twitter handle could result in serious social or economic effects. Half of the users explicitly stated that they were sick, and we were able to confidently determine illness in the other half of the cases through their data. It would seem that avoiding discussing a illness is not enough to hide one's health in the age of big data. 
 
 %\section{Conclusions}
 
 \section{Acknowledgments}
 
-Marcel Salath\'e recieved funding through a Branco Weiss fellowship. We thank the Pennsylvania State University's Student Health Center for aid in collecting data. The machine learning toolset Weka \cite{Hall:2009ud}.
+Marcel Salath\'e received funding through a Branco Weiss fellowship. We thank the Pennsylvania State University's Student Health Center for aid in collecting data. The machine learning tool set Weka \cite{Hall:2009ud}.
 
 %\begin{thebibliography}{1}
 %\bibitem{Ford:1956vc}
@@ -388,14 +388,14 @@ prayer & 26.765 \\ \hline
 reserv & 26.765 \\ \hline
 riot & 26.765 \\ 
 \hline\end{tabular}
-\caption{The thirty keyword stems with the highest positive predictive power ranked by significance. Ratio is calculated as the rate of occurance when a user is sick over the rate when a user is not sick.}
+\caption{The thirty keyword stems with the highest positive predictive power ranked by significance. Ratio is calculated as the rate of occurrence when a user is sick over the rate when a user is not sick.}
 \label{tab:thirty_best}
 \end{table}
 
-\section{Keyword recomendations}
+\section{Keyword Recommendations}
 
 
-While our system should be trusted more than one based simply off of aggregated tweets, it is more computationally intensive than simply pulling data from a keyword stream. These systems require the user to select a specific set of keywords before data collection can begin. Keywords representing symptoms such as ``flu'', ``cough'', ``sore throat'', and ``headache'' are often chosen. We suggest that the thirty\footnote{The Twitter API limits queries to thirty keywords.} keywords with the highest postivie predictive value (see table \ref{tab:thirty_best}) be chosen as the parameters for a keyword stream. In addition to keywords related to symptoms (e.g. ``flu'' or ``sick'') we also find keywords related to treatments (e.g. ``health,'' ``prayer'' or ``recovery'') and keywords related to negative mood (e.g. vulgarities) to be more commonly tweeted when a user is ill. 
+While our system should be trusted more than one based simply off of aggregated tweets, it is more computationally intensive than simply pulling data from a keyword stream. These systems require the user to select a specific set of keywords before data collection can begin. Keywords representing symptoms such as ``flu'', ``cough'', ``sore throat'', and ``headache'' are often chosen. We suggest that the thirty\footnote{The Twitter API limits queries to thirty keywords.} keywords with the highest positive predictive value (see table \ref{tab:thirty_best}) be chosen as the parameters for a keyword stream. In addition to keywords related to symptoms (e.g. ``flu'' or ``sick'') we also find keywords related to treatments (e.g. ``health,'' ``prayer'' or ``recovery'') and keywords related to negative mood (e.g. vulgarities) to be more commonly tweeted when a user is ill. 
 
 
 \balancecolumns
