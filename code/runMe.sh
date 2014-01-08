@@ -9,6 +9,8 @@ R CMD BATCH keyword_legend.r &
 R CMD BATCH roc_friend.r &
 R CMD BATCH roc_followers.r &
 
+R CMD BATCH sick_time.r &
+
 wait
 
 mv *.eps ../figs/
