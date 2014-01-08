@@ -270,6 +270,20 @@ Even if a user is not currently active at all on Twitter, her friends or followe
 
 So far we have considered five seperate methods for detecting illness based off of a user's Twitter activity. However, there is no reason that we cannot combine these methods to get a stronger signal. For example, while mining the user's text is the best of the five methods, she may stop tweeting while sick, which would be detected by the frequency-based anomaly classifier. Aggregating multiple classifiers by a `meta-classifier' has been shown to be an effective method for increasing classification accuracy. \cite{Frossyniotis:2004wx,Todorovski:2003hk}
 
+\begin{table}
+\centering
+\begin{tabular}{|c|c|c|} \hline
+Classifier&Area under ROC& Accuracy \\ \hline
+AdaBoost & .9961 & 99.53\\ \hline
+Bayesian & .9078 &  92.08\\ \hline
+Decision Tree & 9877 & 99.22\\ \hline
+Logit Boost & .9986 & 99.22\\ \hline
+Weighted Voting & .9783 & 93.17\\ \hline
+Baseline & .8544 & 89.72\\ 
+\hline\end{tabular}
+\caption{Performance of the meta classifiers. The presented baseline is the classifier based on datamined keywords -- the highest preforming individual classifier.}
+\label{tab:meta_results}
+\end{table}
 
 We start by selecting the classifier from each of the previous five approaches that has the largest area under the ROC curve (see figure \ref{fig:roc_meta} A). We then use the predicted distributions from these classifiers as the feature vector for the meta classifier. We use AdaBoost, bayesian classification, J48 decision trees, logit boost, and weighted voting to evaluate the meta-dataset. We then evaluate these methods with leave-one-out cross validation and see an increase in ROC area (and accuracy) over the best individual classifier (see figure \ref{fig:roc_meta} B).
 
