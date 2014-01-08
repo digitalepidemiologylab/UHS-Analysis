@@ -129,13 +129,13 @@ Systems, such as Influenzanet or Flu Near You, use self-reported symptoms to dia
 %
 %Pull med info of individuals professionally diagnosed with ILI and their twitter accts. Compare old methods. Suggest some new things.
 
-We develop this such a system as follows. In section 3 we describe the collection of professional diagnosis of Twitter users and collect their Twitter information. In section 4 we consider extracting textual information from Tweets as a method for diagnosing influenza. In section 5 we consider anomalies in a user's Tweeting behavior as a signal for diagnosing influenza. In section 6 we extend these methods to other users on a persons social network to diagnose the original person. In section 7 we aggregate the results of the previous classifiers to develop a more accurate meta-classifier.
+We develop this such a system as follows. In section 2 we describe the collection of professional diagnosis of Twitter users and collect their Twitter information. In section 3 we consider extracting textual information from Tweets as a method for diagnosing influenza. In section 4 we consider anomalies in a user's Tweeting behavior as a signal for diagnosing influenza. In section 5 we extend these methods to other users on a persons social network to diagnose the original person. In section 6 we aggregate the results of the previous classifiers to develop a more accurate meta-classifier.
 
-\section{Related Work}
+%\section{Related Work}
 
 %People with issues \cite{Bodnar:2013we,Butler:2013uh,Lamb:2013to} also plos paper!
 
-Most work to this point considers finding messages in tweets (i.e. ``I'm sick'') or in keyword frequencies. 
+%Most work to this point considers finding messages in tweets (i.e. ``I'm sick'') or in keyword frequencies. 
 
 %Keyword \cite{Culotta:2010hx,Goel:2010jf}
 
@@ -144,6 +144,13 @@ Most work to this point considers finding messages in tweets (i.e. ``I'm sick'')
 \section{Data Collection}
 \subsection{Medical Records}
 We recieved information about 104 individuals from the Pennsylvania State University's Health Services that were professionally diagnosed with Influenza by a medical professional during the 2012-2013 Influenza season (see figure \ref{fig:flu_rate}).  Additionally we collect information from 125 individuals that were NOT diagnosed as a control set. The participants were mostly students (\(72\%\) were between the ages of 18 and 22) and slightly female (\(133 / 226 \approx 58.8\%\).) Data collection was approved through the Pennsylvania State University's IRB (\#41345.) Additionally we recieved the Twitter handles from 119 of these individuals.
+
+\begin{figure} [h]
+\centering
+\includegraphics[width=.45\textwidth]{figs/sick_count.eps}
+\caption{The rate of professionally diagnosed Influenza cases during the 2012-2013 season in our sample.}
+\label{fig:flu_rate}
+\end{figure}
 
 \subsection{Twitter Records}
 While we received a total of 119 Twitter accounts, 15 were discarded because the associated accounts were either non-existent, banned, or private. For each of the remaining 104 accounts, we pulled their profile information, their friends and followers information, their most recent 3000 tweets, and their friends profiles and tweets. Some users did not tweet during the month that they were sick; we kept those accounts as part of the control group. We were limited to the most recent 3000 tweets by Twitter's time line query, but this only effected two accounts -- both of which posted multiple times per hour and were thrown out because we could only look back a few days.
