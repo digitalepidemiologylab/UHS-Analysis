@@ -2,8 +2,11 @@
 
 \bibitem{Bodnar:2013we}
 T.~Bodnar and M.~Salath{\'e}.
-\newblock {Validating Models for Disease Detection Using Twitter}.
-\newblock {\em WWW 2013 Companion}, June 2013.
+\newblock Validating models for disease detection using twitter.
+\newblock In {\em Proceedings of the 22Nd International Conference on World
+  Wide Web Companion}, WWW '13 Companion, pages 699--702, Republic and Canton
+  of Geneva, Switzerland, 2013. International World Wide Web Conferences
+  Steering Committee.
 
 \bibitem{Butler:2013uh}
 D.~Butler.
@@ -37,8 +40,8 @@ F.~E. Grubbs.
 
 \bibitem{Hall:2009ud}
 M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemann, and I.~H. Witten.
-\newblock {The WEKA data mining software}.
-\newblock {\em ACM SIGKDD Explorations Newsletter}, 11(1):10, Nov. 2009.
+\newblock The weka data mining software: An update.
+\newblock {\em SIGKDD Explor. Newsl.}, 11(1):10--18, Nov. 2009.
 
 \bibitem{Heymann:2001}
 D.~L. Heymann and G.~R. Rodier.
@@ -48,8 +51,8 @@ D.~L. Heymann and G.~R. Rodier.
 
 \bibitem{Lamb:2013to}
 A.~Lamb, M.~J. Paul, and M.~Dredze.
-\newblock {Separating Fact from Fear: Tracking Flu Infections on Twitter}.
-\newblock {\em cs.jhu.edu}, 2013.
+\newblock Separating fact from fear: Tracking flu infections on twitter.
+\newblock pages 789--795, June 2013.
 
 \bibitem{Marquet:2005tb}
 R.~L. Marquet, A.~I. Bartelds, S.~P. van Noort, C.~E. Koppeschaar, J.~Paget,
@@ -76,12 +79,12 @@ M.~Salath{\'e}, L.~Bengtsson, T.~J. Bodnar, D.~D. Brewer, J.~S. Brownstein,
   C.~Buckee, E.~M. Campbell, C.~Cattuto, S.~Khandelwal, P.~L. Mabry, and
   A.~Vespignani.
 \newblock {Digital epidemiology.}
-\newblock {\em PLoS computational biology}, 8(7):e1002616, July 2012.
+\newblock {\em PLoS computational biology}, 8(7):e1002616, Jul 2012.
 
 \bibitem{Todorovski:2003hk}
-L.~Todorovski and S.~D{\v z}eroski.
-\newblock {Combining classifiers with meta decision trees}.
-\newblock {\em Machine Learning}, 50(3):223--249, 2003.
+L.~Todorovski and S.~D\v{z}eroski.
+\newblock Combining classifiers with meta decision trees.
+\newblock {\em Mach. Learn.}, 50(3):223--249, Mar. 2003.
 
 \bibitem{Frossyniotis:2004wx}
 G.~Tsirogiannis, D.~Frossyniotis, K.~Nikita, and A.~Stafylopatis.
@@ -91,10 +94,11 @@ G.~Tsirogiannis, D.~Frossyniotis, K.~Nikita, and A.~Stafylopatis.
   in Computer Science}, pages 154--163. Springer Berlin Heidelberg, 2004.
 
 \bibitem{VanNoort:2007uk}
-S.~P. Van~Noort, M.~Muehlen, and A.~H. Rebelo.
-\newblock {Gripenet: an internet-based system to monitor influenza-like illness
-  uniformly across Europe.}
-\newblock {\em {\ldots} = European {\ldots}}, 2007.
+S.~P. van Noort, M.~Muehlen, H.~Rebelo~de Andrade, C.~Koppeschaar, J.~M.
+  Lima~Lourenco, and M.~G. Gomes.
+\newblock {{G}ripenet: an internet-based system to monitor influenza-like
+  illness uniformly across {E}urope}.
+\newblock {\em Euro Surveill.}, 12(7):5--6, Jul 2007.
 
 \bibitem{Willett:2006vb}
 P.~Willett.
