@@ -52,7 +52,10 @@ D.~L. Heymann and G.~R. Rodier.
 \bibitem{Lamb:2013to}
 A.~Lamb, M.~J. Paul, and M.~Dredze.
 \newblock Separating fact from fear: Tracking flu infections on twitter.
-\newblock pages 789--795, June 2013.
+\newblock In {\em Proceedings of the 2013 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pages 789--795, Atlanta, Georgia, June 2013. Association for
+  Computational Linguistics.
 
 \bibitem{Marquet:2005tb}
 R.~L. Marquet, A.~I. Bartelds, S.~P. van Noort, C.~E. Koppeschaar, J.~Paget,

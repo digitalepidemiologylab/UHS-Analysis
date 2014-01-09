@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  8 JAN 2014 17:33
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  9 JAN 2014 04:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -413,14 +413,14 @@ Package epstopdf Info: Source file: <figs/followers_roc.eps>
 (epstopdf)                    size: 10252 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/followers_roc-eps-con
 verted-to.pdf figs/followers_roc.eps>
-(epstopdf)             \includegraphics on input line 261.
+(epstopdf)             \includegraphics on input line 262.
 Package epstopdf Info: Output file is already uptodate.
 <figs/followers_roc-eps-converted-to.pdf, id=29, 505.89pt x 505.89pt>
 File: figs/followers_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/followers_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/followers_roc-eps-converted-to.pdf used on input 
-line 261.
+line 262.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/friends_roc.eps>
 (epstopdf)                    date: 2013-12-30 19:52:46
@@ -430,7 +430,7 @@ Package epstopdf Info: Source file: <figs/friends_roc.eps>
 (epstopdf)                    size: 11333 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/friends_roc-eps-conve
 rted-to.pdf figs/friends_roc.eps>
-(epstopdf)             \includegraphics on input line 264.
+(epstopdf)             \includegraphics on input line 265.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/friends_roc-eps-converted-to.pdf, id=30, 505.89pt x 505.89pt>
@@ -438,7 +438,7 @@ File: figs/friends_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/friends_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/friends_roc-eps-converted-to.pdf used on input li
-ne 264.
+ne 265.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/keyword_legend.eps>
 (epstopdf)                    date: 2014-01-08 03:43:04
@@ -448,13 +448,13 @@ Package epstopdf Info: Source file: <figs/keyword_legend.eps>
 (epstopdf)                    size: 9473 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/keyword_legend-eps-co
 nverted-to.pdf figs/keyword_legend.eps>
-(epstopdf)             \includegraphics on input line 267.
+(epstopdf)             \includegraphics on input line 268.
 Package epstopdf Info: Output file is already uptodate.
 File: figs/keyword_legend-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/keyword_legend-eps-converted-to.pdf>
 Package pdftex.def Info: figs/keyword_legend-eps-converted-to.pdf used on input
- line 267.
+ line 268.
 (pdftex.def)             Requested size: 226.79846pt x 9.34082pt.
  [3 <./figs/key_exp_roc-eps-converted-to.pdf> <./figs/key_dm_roc-eps-converted-
 to.pdf> <./figs/keyword_legend-eps-converted-to.pdf> <./figs/followers_roc-eps-
@@ -467,7 +467,7 @@ Package epstopdf Info: Source file: <figs/meta_roc.eps>
 (epstopdf)                    size: 11889 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meta_roc-eps-converte
 d-to.pdf figs/meta_roc.eps>
-(epstopdf)             \includegraphics on input line 299.
+(epstopdf)             \includegraphics on input line 319.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/meta_roc-eps-converted-to.pdf, id=69, 505.89pt x 505.89pt>
@@ -475,7 +475,7 @@ File: figs/meta_roc-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/meta_roc-eps-converted-to.pdf>
 Package pdftex.def Info: figs/meta_roc-eps-converted-to.pdf used on input line 
-299.
+319.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
 Package epstopdf Info: Source file: <figs/meta_roc_final.eps>
 (epstopdf)                    date: 2014-01-08 03:47:46
@@ -485,7 +485,7 @@ Package epstopdf Info: Source file: <figs/meta_roc_final.eps>
 (epstopdf)                    size: 10833 bytes
 (epstopdf)             Command: <repstopdf --outfile=figs/meta_roc_final-eps-co
 nverted-to.pdf figs/meta_roc_final.eps>
-(epstopdf)             \includegraphics on input line 302.
+(epstopdf)             \includegraphics on input line 322.
 Package epstopdf Info: Output file is already uptodate.
 
 <figs/meta_roc_final-eps-converted-to.pdf, id=70, 505.89pt x 505.89pt>
@@ -493,19 +493,16 @@ File: figs/meta_roc_final-eps-converted-to.pdf Graphic file (type pdf)
 
 <use figs/meta_roc_final-eps-converted-to.pdf>
 Package pdftex.def Info: figs/meta_roc_final-eps-converted-to.pdf used on input
- line 302.
+ line 322.
 (pdftex.def)             Requested size: 100.79846pt x 100.79796pt.
- (./Bodnar_www2014.bbl
-Underfull \vbox (badness 2073) has occurred while \output is active []
-
- [4 <./figs/meta_roc-eps-converted-to.pdf> <./figs/meta_roc_final-eps-converted
--to.pdf>])
+ (./Bodnar_www2014.bbl [4 <./figs/meta_roc-eps-converted-to.pdf> <./figs/meta_r
+oc_final-eps-converted-to.pdf>])
 [5] (./Bodnar_www2014.aux) ) 
 Here is how much of TeX's memory you used:
- 3910 strings out of 493488
- 56472 string characters out of 3141326
- 121656 words of memory out of 3000000
- 7127 multiletter control sequences out of 15000+200000
+ 3911 strings out of 493488
+ 56489 string characters out of 3141326
+ 120664 words of memory out of 3000000
+ 7128 multiletter control sequences out of 15000+200000
  49468 words of font info for 67 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  41i,12n,38p,1439b,371s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -519,7 +516,7 @@ fb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
 /usr/local/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/lo
 cal/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/tex
 live/2012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on Bodnar_www2014.pdf (5 pages, 193420 bytes).
+Output written on Bodnar_www2014.pdf (5 pages, 195678 bytes).
 PDF statistics:
  121 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream

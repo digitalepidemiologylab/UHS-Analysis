@@ -252,6 +252,7 @@ Sick&Not Sick&\ \\ \hline
 
 Even if a user is not currently active at all on Twitter, her friends or followers may give clues to her health status. We consider all text that a user's friends or followers tweeted and perform similar keyword analysis as was applied to the user's tweets in section \ref{sec:text_analysis}. Because the number and activity of friends or followers greatly varies regardless of a user's health status, we normalize the counts here by the total number of characters her friends or followers tweeted. We find that most of the tested classifiers are able to detect a signal in both the user's followers' and friends' streams (see figure \ref{fig:roc_network}.)
 
+
 %follower 12393
 %friend 11595
 %best = nb_1000 roc=.8641
@@ -270,6 +271,25 @@ Even if a user is not currently active at all on Twitter, her friends or followe
 \label{fig:roc_network}
 \end{figure}
 
+We further analyse the strength of these classifiers by generating 100 of each classifier using 10 fold cross validation and calculate their area under the ROC curve. We then perform an analysis of variance test based off of the source of the data (friends or followers), the number of keywords used and the classifier's algorithm (see table \ref{tab:network_aov}.) We find that the choice in classifier and the length of the feature vector have a significant effect on strength. More interestingly, we find that classifiers that use tweets from accounts that follow the user are significantly better at diagnosing the user than classifiers that use tweets from accounts that the user follows. 
+
+\begin{table}
+\begin{center}
+\begin{tabular}{llllll}
+\hline\hline
+\multicolumn{1}{c}{ }&\multicolumn{1}{c}{Df}&\multicolumn{1}{c}{Sum Sq}&\multicolumn{1}{c}{F value}&\multicolumn{1}{c}{Pr(\textgreater F)}\tabularnewline
+\hline
+Source&1&107.16&1290.82&\textless 2e-16 \tabularnewline
+Keyword Size&1&72.19&869.66&\textless 2e-16\tabularnewline
+Classifier&3&752.55&3021.61&\textless 2e-16\tabularnewline
+Residuals&109194&9602& & \tabularnewline
+\hline
+\end{tabular}
+\end{center}
+\caption{Results from an analysis of variance of the area under the ROC curve for classifiers based on tweets from an individual's social network. Factors are whether the data is from the user's friends or followers, the number of keywords chosen and the classifier. }
+\label{tab:network_aov}
+\end{table}
+
 \section{Meta Classifier}
 
 So far we have considered five separate methods for detecting illness based off of a user's Twitter activity. However, there is no reason that we cannot combine these methods to get a stronger signal. For example, while mining the user's text is the best of the five methods, she may stop tweeting while sick, which would be detected by the frequency-based anomaly classifier. Aggregating multiple classifiers by a `meta-classifier' has been shown to be an effective method for increasing classification accuracy. \cite{Frossyniotis:2004wx,Todorovski:2003hk}
@@ -280,7 +300,7 @@ So far we have considered five separate methods for detecting illness based off 
 Classifier&Area under ROC& Accuracy \\ \hline
 AdaBoost & .9961 & 99.53\\ \hline
 Bayesian & .9078 &  92.08\\ \hline
-Decision Tree & 9877 & 99.22\\ \hline
+Decision Tree & .9877 & 99.22\\ \hline
 Logit Boost & .9986 & 99.22\\ \hline
 Weighted Voting & .9783 & 93.17\\ \hline
 Baseline & .8544 & 89.72\\ 
@@ -348,6 +368,7 @@ Marcel Salath\'e received funding through a Branco Weiss fellowship. We thank th
 %
 %APPENDICES are optional
 %\balancecolumns
+\balancecolumns
 
 \appendix
 
@@ -355,9 +376,9 @@ Marcel Salath\'e received funding through a Branco Weiss fellowship. We thank th
 \section{Keyword Recommendations}
 
 
-While our system should be trusted more than one based simply off of aggregated tweets, it is more computationally intensive than simply pulling data from a keyword stream. These systems require the user to select a specific set of keywords before data collection can begin. Keywords representing symptoms such as ``flu'', ``cough'', ``sore throat'', and \balancecolumns ``headache'' are often chosen. We suggest that  the thirty\footnote{The Twitter API limits queries to thirty keywords.} keywords  with the highest positive predictive value (see table \ref{tab:thirty_best}) be chosen as the parameters for a keyword stream. In addition to keywords related to symptoms (e.g. ``flu'' or ``sick'')  we also find keywords related to treatments (e.g. ``health,'' ``prayer'' or ``recovery'') and keywords related to negative mood (e.g. vulgarities) to be more commonly tweeted when a user is ill. 
+While our system should be trusted more than one based simply off of aggregated tweets, it is more computationally intensive than simply pulling data from a keyword stream. These systems require the user to select a specific set of keywords before data collection can begin. Keywords representing symptoms such as ``flu'', ``cough'', ``sore throat'', and ``headache'' are often chosen. We suggest that  the thirty\footnote{The Twitter API limits queries to thirty keywords.} keywords  with the highest positive predictive value (see table \ref{tab:thirty_best}) be chosen as the parameters for a keyword stream. In addition to keywords related to symptoms (e.g. ``flu'' or ``sick'')  we also find keywords related to treatments (e.g. ``health,'' ``prayer'' or ``recovery'') and keywords related to negative mood (e.g. vulgarities) to be more commonly tweeted when a user is ill. 
  
-\thinspace
+\thickspace
 
 \begin{table}[!ht]
 \centering
