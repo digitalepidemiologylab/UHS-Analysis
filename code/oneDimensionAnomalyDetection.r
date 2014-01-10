@@ -194,6 +194,18 @@ tp = tp / length(negative)
 
 plot(fp,tp, type = "l", ...)
 lines(c(0,1),c(0,1), lty=2)
+
+auc = 0
+
+for(j in 1:(length(tp)-1))
+{
+if(fp[j]-fp[j+1] != 0)
+{
+auc = auc + (tp[j]+tp[j+1])/2 * (fp[j]-fp[j+1])
+}
+}
+
+return(auc)
 }
 
 leave_one_out(sick_times,not_sick_times,fOne=TRUE) -> result
