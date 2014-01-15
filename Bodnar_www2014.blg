@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: Bodnar_www2014.aux
 The style file: abbrv.bst
 Database file #1: library.bib
-You've used 17 entries,
+You've used 16 entries,
             2118 wiz_defined-function locations,
-            637 strings with 7820 characters,
-and the built_in function-call counts, 7151 in all, are:
-= -- 698
-> -- 394
+            633 strings with 7737 characters,
+and the built_in function-call counts, 6947 in all, are:
+= -- 678
+> -- 387
 < -- 5
-+ -- 157
-- -- 138
-* -- 596
-:= -- 1185
-add.period$ -- 55
-call.type$ -- 17
-change.case$ -- 119
++ -- 154
+- -- 136
+* -- 588
+:= -- 1146
+add.period$ -- 52
+call.type$ -- 16
+change.case$ -- 115
 chr.to.int$ -- 0
-cite$ -- 17
-duplicate$ -- 236
-empty$ -- 501
-format.name$ -- 138
-if$ -- 1469
+cite$ -- 16
+duplicate$ -- 226
+empty$ -- 484
+format.name$ -- 136
+if$ -- 1428
 int.to.chr$ -- 0
-int.to.str$ -- 17
-missing$ -- 17
-newline$ -- 88
-num.names$ -- 36
-pop$ -- 101
+int.to.str$ -- 16
+missing$ -- 16
+newline$ -- 83
+num.names$ -- 34
+pop$ -- 97
 preamble$ -- 1
-purify$ -- 102
+purify$ -- 99
 quote$ -- 0
-skip$ -- 167
+skip$ -- 160
 stack$ -- 0
-substring$ -- 488
-swap$ -- 55
+substring$ -- 483
+swap$ -- 54
 text.length$ -- 5
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 68
+type$ -- 64
 warning$ -- 0
-while$ -- 65
-width$ -- 19
-write$ -- 197
+while$ -- 63
+width$ -- 18
+write$ -- 187
