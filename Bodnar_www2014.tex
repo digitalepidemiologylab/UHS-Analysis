@@ -129,11 +129,11 @@ Social media has been considered as a data source for tracking disease.  However
 \section{Introduction}
 %Digital epidemiology, datamining Internet records to approach epidemological questions in novel ways, has recently been proposed as an alternative to traditional disease surveillance methods[]. 
 
-Disease surveillance systems -- traditionally relying on reports from medical practitioners -- are an important part of disease control. However, these traditional surveillance systems are often costly and slow to respond \cite{Heymann:2001,Chan2010,Salathe:2012ez}.  The widespread adoption of the Internet by the general public has provided opportunities for the development of novel disease surveillance methods. Compared to traditional systems, where data is provided by medical diagnosis, these new systems provide either semi-automatic -- through long term self reporting systems\cite{Marquet:2005tb,VanNoort:2007uk} -- or fully automatic -- through data mining search queries or social media\cite{Bodnar:2013we,Culotta:2010hx,Goel:2010jf,Butler:2013uh,Olson:2013bo} -- disease surveillance. While these methods are cheaper, faster and cover a larger number of individuals than traditional systems, one can be less confident about their results than the results from a system based on professional diagnosis. In this paper, we develop a system that performs long term surveillance on Twitter users with classifiers trained on professionally diagnosed data that combines the advantages of all three of these systems.
+Disease surveillance systems -- traditionally relying on reports from medical practitioners -- are an important part of disease control. However, these traditional surveillance systems are often costly and slow to respond \cite{Chan2010,Heymann:2001,Salathe:2012ez}.  The widespread adoption of the Internet by the general public has provided opportunities for the development of novel disease surveillance methods. Compared to traditional systems, where data is provided by medical diagnosis, these new systems provide either semi-automatic -- through long term self reporting systems \cite{Marquet:2005tb,VanNoort:2007uk} -- or fully automatic -- through data mining search queries or social media \cite{Bodnar:2013we,Butler:2013uh,Culotta:2010hx,Goel:2010jf,Olson:2013bo} -- disease surveillance. While these methods are cheaper, faster and cover a larger number of individuals than traditional systems, one can be less confident about their results than the results from a system based on professional diagnosis. In this paper, we develop a system that performs long term surveillance on Twitter users with classifiers trained on professionally diagnosed data that combines the advantages of all three of these systems.
 
-Previous work with data mining social media has focused on methods to replicate the patterns found in traditional surveillance networks\cite{Bodnar:2013we,Culotta:2010hx,Goel:2010jf}. However, these methods have several limitations. First, they generally do not differentiate between an individual with an illness and an individual that is worried about an illness; which may have resulted in a predicted influenza rate that was much higher then the actual 2013 influenza rate \cite{Bodnar:2013we,Butler:2013uh,Olson:2013bo,Lamb:2013to}. Second, these methods cannot be extended to areas without a previous surveillance network to train the model. Finally, these methods are fundamentally incapable of detecting diseases that do not show strong spatial-temporal patterns such as mental illness, obesity or Parkinson's disease. Instead of top-down methods to measure levels of disease in a population, we approach this problem from the bottom-up. This addresses all three of these issues: we only diagnose individuals that are likely to have the disease, and not just interested in the disease; we do not require previous data when applying these methods to new problems or locations; and these methods can easily generalize to diseases that do not show strong spatial or temporal patterns because we focus on an individual level.
+Previous work with data mining social media has focused on methods to replicate the patterns found in traditional surveillance networks \cite{Bodnar:2013we,Culotta:2010hx,Goel:2010jf}. However, these methods have several limitations. First, they generally do not differentiate between an individual with an illness and an individual that is worried about an illness; which may have resulted in a predicted influenza rate that was much higher then the actual 2013 influenza rate \cite{Bodnar:2013we,Butler:2013uh,Lamb:2013to,Olson:2013bo}. Second, these methods cannot be extended to areas without a previous surveillance network to train the model. Finally, these methods are fundamentally incapable of detecting diseases that do not show strong spatial-temporal patterns such as mental illness, obesity or Parkinson's disease. Instead of top-down methods to measure levels of disease in a population, we approach this problem from the bottom-up. This addresses all three of these issues: we only diagnose individuals that are likely to have the disease, and not just interested in the disease; we do not require previous data when applying these methods to new problems or locations; and these methods can easily generalize to diseases that do not show strong spatial or temporal patterns because we focus on an individual level.
 
-Systems, such as InfluenzaNet or Flu Near You, use self-reported symptoms to diagnose an individual also work from a bottom-up approach.\cite{Marquet:2005tb,VanNoort:2007uk} These systems have the potential to be better than traditional surveillance systems because they update in near-real-time and can detect cases even when the user has not gone to their doctor. These systems require the user to sign up which allows for long term studies which are not normally able to be done with Tweets or search queries. However this reduces the number of users studied compared to data mining approaches. For example, Flu Near You had a total of 9,456 users report during the week ending on 29 December 2013. Marquet et al. \cite{Marquet:2005tb} have shown a large drop out rate with only 53\% of users participating for five or more weeks. While this amount of data is sufficient for many purposes, a system based on Twitter's millions of active users would open the door to more applications.
+Systems, such as InfluenzaNet or Flu Near You, use self-reported symptoms to diagnose an individual also work from a bottom-up approach \cite{Marquet:2005tb,VanNoort:2007uk}. These systems have the potential to be better than traditional surveillance systems because they update in near-real-time and can detect cases even when the user has not gone to their doctor. These systems require the user to sign up which allows for long term studies which are not normally able to be done with Tweets or search queries. However this reduces the number of users studied compared to data mining approaches. For example, Flu Near You had a total of 9,456 users report during the week ending on 29 December 2013. Marquet et al. \cite{Marquet:2005tb} have shown a large drop out rate with only 53\% of users participating for five or more weeks. While this amount of data is sufficient for many purposes, a system based on Twitter's millions of active users would open the door to more applications.
 
 
 %Digital epidemiology \(\to\) novel disease detection mechanisms.
@@ -295,7 +295,7 @@ Residuals&109194&9602& & \tabularnewline
 
 \section{Meta Classifier}
 
-So far we have considered five separate methods for detecting illness based off of a user's Twitter activity: hand-chosen keyword analysis, datamined keyword analysis, hand classified tweets, anomaly detection and network analysis. However, there is no reason that we cannot combine these methods to get a stronger signal. For example, while mining the user's text is the best of the five methods, she may stop tweeting while sick, which would be detected by the frequency-based anomaly classifier. Aggregating multiple classifiers by a `meta-classifier' has been shown to be an effective method for increasing classification accuracy. \cite{Frossyniotis:2004wx,Todorovski:2003hk}
+So far we have considered five separate methods for detecting illness based off of a user's Twitter activity: hand-chosen keyword analysis, datamined keyword analysis, hand classified tweets, anomaly detection and network analysis. However, there is no reason that we cannot combine these methods to get a stronger signal. For example, while mining the user's text is the best of the five methods, she may stop tweeting while sick, which would be detected by the frequency-based anomaly classifier. Aggregating multiple classifiers by a `meta-classifier' has been shown to be an effective method for increasing classification accuracy \cite{Todorovski:2003hk,Frossyniotis:2004wx}.
 
 \begin{table}
 \centering
@@ -339,23 +339,118 @@ In this paper, we have shown that it is possible to diagnose an individual from 
 \section{Acknowledgments}
 
 Marcel Salath\'e received funding through a Branco Weiss fellowship. We thank the Pennsylvania State University's Student Health Center for aid in collecting data. We thank Brian Lambert and Cosme Adrover Pacheco for their valuable comments on the paper. The machine learning tool set Weka version 3.7.10 was used in this paper \cite{Hall:2009ud}.
-%\begin{thebibliography}{1}
-%\bibitem{Ford:1956vc}
-%L. R. Ford and D. R. Fulkerson. \newblock{Maximal Flow through a Network}. \newblock{\em Canadian Journal of Mathematics}, 8(3):399-404, 1956.
-%\end{thebibliography}
-%@article{Ford:1956vc,
-%author = {Ford, L R and Fulkerson, D R},
-%title = {{Maximal Flow through a Network.}},
-%journal = {Canadian Journal of Mathematics},
-%year = {1956},
-%pages = {399--404}
-%}
+\begin{thebibliography}{10}
+
+\bibitem{Bodnar:2013we}
+T.~Bodnar and M.~Salath{\'e}.
+\newblock Validating models for disease detection using twitter.
+\newblock In {\em Proceedings of the 22nd International Conference on World
+  Wide Web Companion}, WWW '13 Companion, pages 699--702, Republic and Canton
+  of Geneva, Switzerland, 2013. International World Wide Web Conferences
+  Steering Committee.
+
+\bibitem{Butler:2013uh}
+D.~Butler.
+\newblock {When Google got flu wrong}.
+\newblock {\em Nature}, 494(7436):155--156, Feb. 2013.
+
+\bibitem{Chan2010}
+E.~H. Chan, T.~F. Brewer, L.~C. Madoff, M.~P. Pollack, A.~L. Sonricker,
+  M.~Keller, C.~C. Freifeld, M.~Blench, A.~Mawudeku, and J.~S. Brownstein.
+\newblock Global capacity for emerging infectious disease detection.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  107(50):21701--21706, 2010.
+
+\bibitem{Culotta:2010hx}
+A.~Culotta.
+\newblock {Towards detecting influenza epidemics by analyzing Twitter messages
+  }.
+\newblock In {\em the First Workshop}, pages 115--122, New York, New York, USA,
+  2010. ACM Press.
+
+\bibitem{Goel:2010jf}
+S.~Goel, J.~M. Hofman, S.~Lahaie, D.~M. Pennock, and D.~J. Watts.
+\newblock {Predicting consumer behavior with Web search.}
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 107(41):17486--17490, Oct. 2010.
+
+\bibitem{Grubs:1969ab}
+F.~E. Grubbs.
+\newblock {Procedures for Detecting Outlying Observations in Samples}.
+\newblock {\em Technometrics}, 11(1):1--21, 1969.
+
+\bibitem{Hall:2009ud}
+M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemann, and I.~H. Witten.
+\newblock The weka data mining software: An update.
+\newblock {\em SIGKDD Explor. Newsl.}, 11(1):10--18, Nov. 2009.
+
+\bibitem{Heymann:2001}
+D.~L. Heymann and G.~R. Rodier.
+\newblock Hot spots in a wired world: \{WHO\} surveillance of emerging and
+  re-emerging infectious diseases.
+\newblock {\em The Lancet Infectious Diseases}, 1(5):345 -- 353, 2001.
+
+\bibitem{Lamb:2013to}
+A.~Lamb, M.~J. Paul, and M.~Dredze.
+\newblock Separating fact from fear: Tracking flu infections on twitter.
+\newblock In {\em Proceedings of the 2013 Conference of the North American
+  Chapter of the Association for Computational Linguistics: Human Language
+  Technologies}, pages 789--795, Atlanta, Georgia, June 2013. Association for
+  Computational Linguistics.
+
+\bibitem{Marquet:2005tb}
+R.~L. Marquet, A.~I. Bartelds, S.~P. van Noort, C.~E. Koppeschaar, J.~Paget,
+  F.~G. Schellevis, and J.~van~der Zee.
+\newblock {Internet-based monitoring of influenza-like illness (ILI) in the
+  general population of the Netherlands during the 2003-2004 influenza season}.
+\newblock {\em BMC public health}, 6(1):242, 2006.
+
+\bibitem{Olson:2013bo}
+D.~R. Olson, K.~J. Konty, M.~Paladini, C.~Viboud, and L.~Simonsen.
+\newblock {Reassessing Google Flu Trends Data for Detection of Seasonal and
+  Pandemic Influenza: A Comparative Epidemiological Study at Three Geographic
+  Scales}.
+\newblock {\em PLoS computational biology}, 9(10):e1003256, Oct. 2013.
+
+\bibitem{Porter:1980dd}
+M.~F. Porter.
+\newblock {An algorithm for suffix stripping}.
+\newblock {\em Program: electronic library and information systems},
+  14(3):130--137, 1980.
+
+\bibitem{Salathe:2012ez}
+M.~Salath{\'e}, L.~Bengtsson, T.~J. Bodnar, D.~D. Brewer, J.~S. Brownstein,
+  C.~Buckee, E.~M. Campbell, C.~Cattuto, S.~Khandelwal, P.~L. Mabry, and
+  A.~Vespignani.
+\newblock {Digital epidemiology.}
+\newblock {\em PLoS computational biology}, 8(7):e1002616, Jul 2012.
+
+\bibitem{Todorovski:2003hk}
+L.~Todorovski and S.~D\v{z}eroski.
+\newblock Combining classifiers with meta decision trees.
+\newblock {\em Mach. Learn.}, 50(3):223--249, Mar. 2003.
+
+\bibitem{Frossyniotis:2004wx}
+G.~Tsirogiannis, D.~Frossyniotis, K.~Nikita, and A.~Stafylopatis.
+\newblock A meta-classifier approach for medical diagnosis.
+\newblock In G.~Vouros and T.~Panayiotopoulos, editors, {\em Methods and
+  Applications of Artificial Intelligence}, volume 3025 of {\em Lecture Notes
+  in Computer Science}, pages 154--163. Springer Berlin Heidelberg, 2004.
+
+\bibitem{VanNoort:2007uk}
+S.~P. van Noort, M.~Muehlen, H.~Rebelo~de Andrade, C.~Koppeschaar, J.~M.
+  Lima~Lourenco, and M.~G. Gomes.
+\newblock {{G}ripenet: an internet-based system to monitor influenza-like
+  illness uniformly across {E}urope}.
+\newblock {\em Euro Surveill.}, 12(7):5--6, Jul 2007.
+
+\end{thebibliography}
 %
 % The following two commands are all you need in the
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
-\bibliographystyle{abbrv}
-\bibliography{library}  % sigproc.bib is the name of the Bibliography in this case
+%\bibliographystyle{abbrv}
+%\bibliography{library}  % sigproc.bib is the name of the Bibliography in this case
 % You must have a proper ".bib" file
 %  and remember to run:
 % latex bibtex latex latex
