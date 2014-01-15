@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  15 JAN 2014 03:24
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2013.11.8)  15 JAN 2014 08:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -350,6 +350,11 @@ Overfull \hbox (1.70232pt too wide) in paragraph at lines 165--166
 9 :\OT1/cmr/m/n/9 8%$\T1/aer/m/n/9 .) Data
  []
 
+
+Overfull \hbox (1.67186pt too wide) in paragraph at lines 165--166
+\T1/aer/m/n/9 ver-sity's IRB (ap-proval #41345.) Twit-ter han-dles were avail-
+ []
+
 (./tables/keyword_expert_odds.tex) [2 <./figs/sick_count-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figs/key_exp_roc.eps>
 (epstopdf)                    date: 2014-01-15 03:09:14
@@ -524,7 +529,7 @@ sr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr
 ocal/texlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/te
 xlive/2012/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2
 012/texmf-dist/fonts/type1/urw/times/utmb8a.pfb>
-Output written on Bodnar_www2014.pdf (5 pages, 205396 bytes).
+Output written on Bodnar_www2014.pdf (5 pages, 205340 bytes).
 PDF statistics:
  125 PDF objects out of 1000 (max. 8388607)
  83 compressed objects within 1 object stream
