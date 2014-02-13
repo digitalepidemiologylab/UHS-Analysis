@@ -26,17 +26,26 @@
 %
 % For tracking purposes - this is V3.1SP - APRIL 2009
 
-\documentclass{acm_proc_article-sp}
+
+
+
+\documentclass{sig-alternate-2013}
+\newcommand{\squeezeup}{\vspace{-2.5mm}} %% thanks http://tex.stackexchange.com/questions/60477/remove-space-after-figure-and-before-text
+\permission{Copyright is held by the International World Wide Web Conference Committee (IW3C2). IW3C2 reserves the right to provide a hyperlink to the author's site if the Material is used in electronic media.}
+\conferenceinfo{WWW'14 Companion,}{April 7--11, 2014, Seoul, Korea.} 
+\copyrightetc{ACM \the\acmcopyr}
+\crdata{978-1-4503-2745-9/14/04. \\
+http://dx.doi.org/10.1145/2567948.2579272}
 
 \usepackage{graphicx}
 \usepackage{caption}
 \usepackage{subcaption}
 
+\clubpenalty=10000 
+\widowpenalty = 10000
+
 \begin{document}
 
-
-\clubpenalty=10000 
-\widowpenalty = 10000 
 
 \title{On the Ground Validation of Online Diagnosis with Twitter and Medical Records}
 
@@ -151,7 +160,7 @@ We develop such a system as follows. In section 2 we describe the collection of 
 %Most work to this point considers finding messages in tweets (i.e. ``I'm sick'') or in keyword frequencies. 
 
 %Keyword \cite{Culotta:2010hx,Goel:2010jf}
-
+\squeezeup
 %Tweet classification \cite{Culotta:2010hx,Lamb:2013to,Salathe:2011gr}
 \begin{figure} [h]
 \centering
@@ -159,7 +168,7 @@ We develop such a system as follows. In section 2 we describe the collection of 
 \caption{The professionally diagnosed Influenza cases during the 2012-2013 season in our sample.}
 \label{fig:flu_rate}
 \end{figure}
-
+\squeezeup
 \section{Data Collection}
 \subsection{Medical Records}
 We received information from the Pennsylvania State University's Health Services about 104 individuals that were diagnosed with influenza by a medical professional during the 2012-2013 Influenza season. Due to privacy concerns, we were limited to knowing which month an individual was diagnosed (see figure \ref{fig:flu_rate}).  For comparison, we also obtained information from 122 individuals that were \emph{not} diagnosed with influenza during this time. The participants were mostly students (\(72\%\) were between the ages of 18 and 22) and slightly more female than expected (\(133 / 226 \approx 58.8\%\).) Data collection was approved through the Pennsylvania State University's IRB (approval \#41345.) Twitter handles were available for 119 of these individuals.
@@ -208,10 +217,6 @@ First, we use the occurrence or absence of keywords as features for classificati
 
 
 Second, we consider analysing the content of a tweet's text for messages giving hints about being sick such as ``another doctor's appointment Wednesday ... have to \#treatmyflu'' or ``I didn't realize how bad it feels to have the flu, should have gotten a flu shot\footnote{These examples are based off of real tweets, but changed to keep our participants anonymous.}'' that would not be detected through simple bag-of-words techniques. Computational approaches for natural language processing are available. However, because our dataset is relatively small, we use a `human' classifier by hand rating all 1609 tweets that were posted by individuals during the time of their illness. We also sample a randomly selected set of 1609 tweets from times when the users did not have influenza as a control. We find 58 tweets from 17 (\(17/35 = 48.57\%\))  individuals in our study that are about the user being sick. We also find zero tweets about the user having influenza during times when they did \emph{not} have influenza. Because humans are very good at extracting information from text, hand rating tweets allows for an approximately 100.0\% accurate classification, although it clearly does not scale well. Extracting information from text using machine learning is a complex problem where finding solutions that perform as well as humans is rare. Thus, the human classifier gives us an upper limit to the accuracy of a health monitoring system based off of tweet classification (see table \ref{tab:tweet_classified_confusion}.)
-
-
-%\include{tables/keyword_expert_odds.tex}
-
 
 \begin{table}
 \centering
@@ -276,7 +281,7 @@ Even if a user is not currently active on Twitter, users on her social network m
 
 We further analyse the strength of these classifiers by building each classifier using 10 fold cross validation and calculate their performance by measuring area under the ROC curve. We repeat this 100 times to generate a distribution of each classifier's performance. We then perform an analysis of variance test to examine the differences between the sources of data (followers or friends), the number of keywords used and the classifier's algorithm (see table \ref{tab:network_aov}.) We find that the choice in classifier and the length of the feature vector have a significant effect on performance. We find that classifiers that use tweets from accounts that follow the user are significantly better at diagnosing the user than classifiers that use tweets from accounts that the user follows. This may be because Twitter users often follow celebrities and news organizations -- and celebrities and news organizations rarely follow personal Twitter accounts --  which could introduce excess noise. 
 
-\begin{table}[h]
+\begin{table}[htp]
 \begin{center}
 \begin{tabular}{llllll}
 \hline\hline
@@ -292,7 +297,7 @@ Residuals&109194&9602& & \tabularnewline
 \caption{Results from an analysis of variance of the area under the ROC curve for classifiers based on tweets from an individual's social network. Factors are whether the data is from the user's friends or followers, the number of keywords chosen and the classifier. }
 \label{tab:network_aov}
 \end{table}
-
+\squeezeup
 \section{Meta Classifier}
 
 So far we have considered five separate methods for detecting illness based off of a user's Twitter activity: hand-chosen keyword analysis, datamined keyword analysis, hand classified tweets, anomaly detection and network analysis. However, there is no reason that we cannot combine these methods to get a stronger signal. For example, while mining the user's text is the best of the five methods, she may stop tweeting while sick, which would be detected by the frequency-based anomaly classifier. Aggregating multiple classifiers by a `meta-classifier' has been shown to be an effective method for increasing classification accuracy \cite{Todorovski:2003hk,Frossyniotis:2004wx}.
@@ -327,7 +332,7 @@ We start by selecting the classifier from each of the previous five approaches t
 \caption{The accuracy of the previous classifiers (a) and the accuracy of various classifiers that use the previous classifier's results as features (b). }
 \label{fig:roc_meta}
 \end{figure}
-
+\squeezeup
 
 \section{Conclusions}
 
@@ -335,6 +340,48 @@ We start by selecting the classifier from each of the previous five approaches t
 In this paper, we have shown that it is possible to diagnose an individual from her social media data with high accuracy. Computational approaches to aid in disease diagnosis has been approached before, however they have been developed with a medical setting in mind. That is, the question addressed was ``can we diagnose an individual based off data gathered from medical tests run on her?'' instead of ``can we diagnose an individual solely based off of publicly available social media data?''  While we focus on the relatively benign case of remotely reconstructing a confidential diagnosis of influenza, these methods could also be applied to stigmatized diseases, such as HIV, where being able to determine if an individual is HIV positive without her knowledge and with only her Twitter handle could result in serious social or economic effects. Half of the users explicitly stated that they were sick, and we were able to confidently determine illness in the other half of the cases through their data. It would seem that simply avoiding discussing an illness is not enough to hide one's health in the age of big data. 
 
 %\section{Conclusions}
+\begin{table}[!ht]
+\centering
+\begin{tabular}{|c|c|}\hline
+Keyword&Ratio\ \\ \hline
+flu &  34.424\\ \hline
+health &  11.360\\ \hline
+sick &  5.019\\ \hline
+track & 10.952 \\ \hline
+stud & 3.508 \\ \hline
+asshol & 9.090 \\ \hline
+ton & 9.090 \\ \hline
+particip & 20.667 \\ \hline
+salt & 20.667 \\ \hline
+recov & 40.118 \\ \hline
+fuck & 2.963 \\ \hline
+sham & 13.64 \\ \hline
+row & 10.180 \\ \hline
+win & 2.947 \\ \hline
+rt & 3.077 \\ \hline
+  \end{tabular}
+  \hspace{1em}
+\begin{tabular}{|c|c|}\hline
+cont. & \\ \hline
+walk & 3.077 \\ \hline
+childr & 6.820 \\ \hline
+incred & 6.820 \\ \hline
+meal & 6.820 \\ \hline
+longer &  6.820 \\ \hline
+succes &  26.765 \\ \hline
+accis & 26.765 \\ \hline
+holida & 26.765 \\ \hline
+luv & 26.765 \\ \hline
+oblig & 26.765 \\ \hline
+path & 26.764 \\ \hline
+pract & 26.764 \\ \hline
+prayer & 26.765 \\ \hline
+reserv & 26.765 \\ \hline
+riot & 26.765 \\ 
+\hline\end{tabular}
+\caption{The thirty keyword stems with the highest positive predictive power ranked by significance. The Twitter API limits searches to at most thirty keywords. Ratio is calculated as the rate of occurrence when a user is sick over the rate when a user is not sick.}
+\label{tab:thirty_best}
+\end{table}
 
 \section{Acknowledgments}
 
@@ -461,55 +508,12 @@ S.~P. van Noort, M.~Muehlen, H.~Rebelo~de Andrade, C.~Koppeschaar, J.~M.
 %APPENDICES are optional
 %\balancecolumns
 %\balancecolumns
-
+\squeezeup
 \appendix
 \section{Keyword Recommendations}
 While our system should be trusted more than one based simply off of aggregated tweets, it is more computationally intensive than simply pulling data from a keyword stream. These systems require the user to select a specific set of keywords before data collection can begin. Keywords representing symptoms such as ``flu'', ``cough'', ``sore throat'', and ``headache'' are often chosen. We suggest  the thirty keywords  with the highest positive predictive value (see table \ref{tab:thirty_best}) be chosen as the parameters for a keyword stream. In addition to keywords related to symptoms (e.g. ``flu'' or ``sick'')  we also find keywords related to treatments (e.g. ``health,'' ``prayer'' or ``recovery'') and keywords related to negative mood (e.g. vulgarities) to be more commonly tweeted when a user is ill. 
  
 \vspace{4pt}
-
-\begin{table}[!ht]
-\centering
-\begin{tabular}{|c|c|}\hline
-Keyword&Ratio\ \\ \hline
-flu &  34.424\\ \hline
-health &  11.360\\ \hline
-sick &  5.019\\ \hline
-track & 10.952 \\ \hline
-stud & 3.508 \\ \hline
-asshol & 9.090 \\ \hline
-ton & 9.090 \\ \hline
-particip & 20.667 \\ \hline
-salt & 20.667 \\ \hline
-recov & 40.118 \\ \hline
-fuck & 2.963 \\ \hline
-sham & 13.64 \\ \hline
-row & 10.180 \\ \hline
-win & 2.947 \\ \hline
-rt & 3.077 \\ \hline
-  \end{tabular}
-  \hspace{1em}
-\begin{tabular}{|c|c|}\hline
-cont. & \\ \hline
-walk & 3.077 \\ \hline
-childr & 6.820 \\ \hline
-incred & 6.820 \\ \hline
-meal & 6.820 \\ \hline
-longer &  6.820 \\ \hline
-succes &  26.765 \\ \hline
-accis & 26.765 \\ \hline
-holida & 26.765 \\ \hline
-luv & 26.765 \\ \hline
-oblig & 26.765 \\ \hline
-path & 26.764 \\ \hline
-pract & 26.764 \\ \hline
-prayer & 26.765 \\ \hline
-reserv & 26.765 \\ \hline
-riot & 26.765 \\ 
-\hline\end{tabular}
-\caption{The thirty keyword stems with the highest positive predictive power ranked by significance. The Twitter API limits searches to at most thirty keywords. Ratio is calculated as the rate of occurrence when a user is sick over the rate when a user is not sick.}
-\label{tab:thirty_best}
-\end{table}
 
 
 \balancecolumns
